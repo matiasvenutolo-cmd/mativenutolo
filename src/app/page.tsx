@@ -63,14 +63,14 @@ export default function Home() {
 
               <figure className="hero__retrato">
                 <img
-                  src="/fotos/microsoft-argentina.jpg"
-                  alt="Matías Venutolo presentando la transformación AI First del Banco Ciudad"
-                  width={1152}
-                  height={1536}
+                  src="/fotos/retrato.jpg"
+                  alt="Retrato de Matías Venutolo"
+                  width={1200}
+                  height={1600}
                   fetchPriority="high"
                   decoding="async"
                 />
-                <figcaption>Oficinas de Microsoft, Buenos Aires</figcaption>
+                <figcaption>Buenos Aires</figcaption>
               </figure>
             </div>
           </div>
