@@ -219,6 +219,10 @@ export type Aparicion = {
   titulo: string
   texto: string
   fuentes: FuenteId[]
+  /** Imagen en public/fotos. Si falta, la entrada vive solo en texto. */
+  foto?: { src: string; alt: string; ancho: number; alto: number }
+  /** Enlace a la charla completa, cuando existe grabación pública */
+  video?: string
 }
 
 export const APARICIONES: Aparicion[] = [
@@ -230,6 +234,44 @@ export const APARICIONES: Aparicion[] = [
     texto:
       'Cómo se armó el centro de excelencia, cómo evolucionaron los agentes conversacionales y por qué el dato de una transacción, traducido a lenguaje entendible, cambia la relación con el cliente.',
     fuentes: ['podcast'],
+    video: 'https://www.youtube.com/watch?v=ZntRu7K3T_8',
+    foto: {
+      src: '/fotos/yt-ZntRu7K3T_8.jpg',
+      alt: 'Portada del episodio del podcast sobre la IA en Banco Ciudad',
+      ancho: 1280,
+      alto: 720,
+    },
+  },
+  {
+    fecha: '2026',
+    lugar: 'Oficinas de Microsoft, Buenos Aires',
+    formato: 'Charla',
+    titulo: 'Construir una organización AI First',
+    texto:
+      'El camino del banco con inteligencia artificial contado en tres pilares: estar más cerca del cliente, hacer más eficientes los procesos y darle herramientas nuevas a los equipos. También los desafíos de escalar el uso de IA de forma responsable.',
+    fuentes: ['microsoftArg'],
+    foto: {
+      src: '/fotos/microsoft-argentina.jpg',
+      alt: 'Matías Venutolo presentando frente a una pantalla que dice Transformación AI First en Banco Ciudad',
+      ancho: 1152,
+      alto: 1536,
+    },
+  },
+  {
+    fecha: 'Octubre 2025',
+    lugar: 'Revolucia',
+    formato: 'Conferencia',
+    titulo: 'Por qué el Banco Ciudad empezó a usar IA',
+    texto:
+      'Cómo implementar inteligencia artificial en un banco: qué procesos cambia, qué mejora en la experiencia del cliente y dónde aparece la eficiencia real. La charla completa está publicada.',
+    fuentes: ['revolucia', 'revoluciaVideo'],
+    video: 'https://www.youtube.com/watch?v=RiX0te7gQOU',
+    foto: {
+      src: '/fotos/revolucia.jpg',
+      alt: 'Pieza del evento Revolucia anunciando la charla de Matías Venutolo sobre el caso Banco Ciudad',
+      ancho: 1080,
+      alto: 1440,
+    },
   },
   {
     fecha: '2025',
@@ -237,16 +279,74 @@ export const APARICIONES: Aparicion[] = [
     formato: 'Microsoft AI Tour',
     titulo: 'El caso del Banco Ciudad ante líderes financieros y tecnológicos de la región',
     texto:
-      'Presentación de una estrategia que había empezado menos de un año antes y que para entonces ya funcionaba como referencia regional.',
+      'Presentación de una estrategia que había empezado menos de un año antes y que para entonces ya despertaba interés como referencia regional.',
     fuentes: ['aiTour'],
+    foto: {
+      src: '/fotos/ai-tour-santiago.jpg',
+      alt: 'Sala del Microsoft AI Tour en Santiago de Chile durante la presentación del caso',
+      ancho: 960,
+      alto: 960,
+    },
   },
   {
-    fecha: 'Abril 2025',
-    lugar: 'Buenos Aires',
-    formato: 'Panel',
-    titulo: 'Cómo se transforman la experiencia del cliente y los procesos internos',
+    fecha: 'Noviembre 2025',
+    lugar: 'LinkUs Human Technology',
+    formato: 'Encuentro',
+    titulo: 'Copilot GPS, encuentro 2: caso Banco Ciudad',
     texto:
-      'Casos concretos de transformación con inteligencia artificial, del lado del cliente y del lado del empleado, ante un auditorio de áreas de negocio y de personas.',
-    fuentes: ['cronista'],
+      'Sesión sobre adopción de Copilot en una organización grande, con el recorrido del banco como caso de referencia.',
+    fuentes: ['linkus'],
+    video: 'https://www.youtube.com/watch?v=xF2Y7v4HHCE',
+    foto: {
+      src: '/fotos/yt-xF2Y7v4HHCE.jpg',
+      alt: 'Portada del encuentro Copilot GPS con el caso Banco Ciudad',
+      ancho: 1280,
+      alto: 720,
+    },
+  },
+  {
+    fecha: '2025',
+    lugar: 'ADRHA, Buenos Aires',
+    formato: 'Panel',
+    titulo: 'Transformar el día a día de las personas con IA',
+    texto:
+      'Ante un auditorio de recursos humanos, el impacto interno de la inteligencia artificial: cómo cambia el trabajo de la gente antes que el organigrama.',
+    fuentes: ['adrha', 'cronista'],
+    foto: {
+      src: '/fotos/adrha.jpg',
+      alt: 'Matías Venutolo hablando con micrófono durante un panel en ADRHA',
+      ancho: 800,
+      alto: 533,
+    },
+  },
+  {
+    fecha: 'Diciembre 2024',
+    lugar: 'Chattigo',
+    formato: 'Caso de éxito',
+    titulo: 'Banco Ciudad',
+    texto:
+      'El socio tecnológico del canal publica el caso completo, con el recorrido de BIT contado desde la implementación.',
+    fuentes: ['chattigo2024'],
+    video: 'https://www.youtube.com/watch?v=6vxeeb9SiYQ',
+  },
+  {
+    fecha: 'Agosto 2024',
+    lugar: 'CFP Connections',
+    formato: 'Presentación',
+    titulo: 'El caso BIT, chatbot del Banco Ciudad',
+    texto:
+      'El caso presentado ante una audiencia profesional externa, cuando el canal ya había dejado de ser un bot de preguntas frecuentes.',
+    fuentes: ['cfp2024'],
+    video: 'https://www.youtube.com/watch?v=r7YVbo4ZjZQ',
+  },
+  {
+    fecha: 'Octubre 2023',
+    lugar: 'Chattigo',
+    formato: 'Charla',
+    titulo: 'BIT, transformando una organización a través de un chatbot',
+    texto:
+      'La primera aparición pública del caso, un año después de tomar el producto. El título ya decía lo que iba a pasar después: el chatbot como excusa para cambiar la organización.',
+    fuentes: ['chattigo2023'],
+    video: 'https://www.youtube.com/watch?v=XdqDZ8s6EYI',
   },
 ]

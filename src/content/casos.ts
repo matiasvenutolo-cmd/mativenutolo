@@ -109,7 +109,7 @@ export const CASOS: Caso[] = [
       'Cómo se construye una capacidad de inteligencia artificial dentro de un banco, con hoja de ruta, agentes en producción y una conversación de retorno.',
     periodo: '2024 → hoy',
     rol: 'Lo lideré como Líder del Centro de Excelencia en IA',
-    fuentes: ['microsoftEs', 'microsoftEn', 'iproup'],
+    fuentes: ['microsoftEs', 'microsoftEn', 'agentsOfChange'],
     bloques: [
       {
         tipo: 'parrafo',
@@ -185,6 +185,12 @@ export const CASOS: Caso[] = [
         texto:
           'Tampoco se sostiene sin respaldo de la conducción. Una capacidad nueva atraviesa áreas que no dependen de la misma persona, y sin alguien arriba que sostenga la prioridad, cada cruce se convierte en una negociación.',
       },
+      { tipo: 'subtitulo', texto: 'Reconocimiento externo' },
+      {
+        tipo: 'parrafo',
+        texto:
+          'En 2025 el banco fue reconocido como Agente de Cambio por su uso innovador de inteligencia artificial. El valor de un reconocimiento así no es el premio: es que alguien de afuera, mirando muchas organizaciones a la vez, llegó a la misma conclusión que nosotros sobre lo que estaba pasando adentro.',
+      },
     ],
   },
 
@@ -242,7 +248,7 @@ export const CASOS: Caso[] = [
       'Que la organización entera aprenda a mirar su propio trabajo y preguntarse si podría hacerse de otra manera.',
     periodo: '2024 → hoy',
     rol: 'Parte del alcance del Centro de Excelencia en IA',
-    fuentes: ['iproup', 'microsoftEs'],
+    fuentes: ['academia', 'iproup', 'microsoftEs'],
     bloques: [
       {
         tipo: 'parrafo',
@@ -260,10 +266,22 @@ export const CASOS: Caso[] = [
         texto:
           'Los ejemplos visibles hacen más que los comunicados. Cuando alguien que no es del área técnica arma su propia solución y le resuelve un problema concreto, se convierte en referente de su equipo sin que nadie lo nombre, y la transformación deja de necesitar que la empujen desde el centro.',
       },
+      { tipo: 'subtitulo', texto: 'La Academia de IA' },
       {
-        tipo: 'nota',
+        tipo: 'parrafo',
         texto:
-          'Hay un programa de formación interna asociado a esta capacidad. Todavía no publico su alcance ni su cantidad de participantes porque no encontré una fuente pública verificable para esas cifras. Cuando exista, la agrego con su referencia.',
+          'La capacidad no se instala con un comunicado. Se instala enseñando. La Academia de IA del banco es el programa donde los equipos aprenden a usar esta tecnología con sus propios problemas sobre la mesa, y no termina con una certificación: termina con cada participante habiendo construido algo.',
+      },
+      {
+        tipo: 'dato',
+        valor: '500+',
+        rotulo: 'Colaboradores que pasaron por la Academia, cada uno con su propio agente de IA',
+        fuente: 'academia',
+      },
+      {
+        tipo: 'parrafo',
+        texto:
+          'La parte que más me importa es cómo se enseña. Acercar la tecnología de forma amigable y hasta divertida, sacándole el costado intimidante, es lo que hace que alguien que no es del área técnica se anime. Y esa persona, después, es la que mira su propio trabajo distinto.',
       },
       { tipo: 'subtitulo', texto: 'Probar antes de sobre-construir' },
       {

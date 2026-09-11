@@ -62,14 +62,15 @@ export default function Home() {
               </div>
 
               <figure className="hero__retrato">
-                <div className="retrato-pendiente">
-                  <span>
-                    Retrato pendiente
-                    <br />
-                    Blanco y negro · vertical
-                  </span>
-                </div>
-                <figcaption>Buenos Aires</figcaption>
+                <img
+                  src="/fotos/microsoft-argentina.jpg"
+                  alt="Matías Venutolo presentando la transformación AI First del Banco Ciudad"
+                  width={1152}
+                  height={1536}
+                  fetchPriority="high"
+                  decoding="async"
+                />
+                <figcaption>Oficinas de Microsoft, Buenos Aires</figcaption>
               </figure>
             </div>
           </div>
@@ -209,7 +210,11 @@ export default function Home() {
             </h2>
             <div>
               {APARICIONES.map((a) => (
-                <article key={a.titulo} className="aparicion">
+                <article
+                  key={a.titulo}
+                  className="aparicion"
+                  data-con-foto={Boolean(a.foto)}
+                >
                   <div className="aparicion__meta">
                     <b>{a.lugar}</b>
                     {a.formato}
@@ -219,15 +224,45 @@ export default function Home() {
                   <div>
                     <h3 className="aparicion__titulo">{a.titulo}</h3>
                     <p className="aparicion__texto">{a.texto}</p>
-                    <Evidencias ids={a.fuentes} className="aparicion__fuentes" />
+                    <ul className="evidencias aparicion__fuentes">
+                      {a.fuentes.map((id) => (
+                        <li key={id}>
+                          <Evidencia id={id} />
+                        </li>
+                      ))}
+                      {a.video ? (
+                        <li>
+                          <a
+                            className="evidencia"
+                            href={a.video}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <span>Ver la charla</span>
+                            <span className="evidencia__flecha" aria-hidden="true">
+                              ↗
+                            </span>
+                          </a>
+                        </li>
+                      ) : null}
+                    </ul>
                   </div>
+                  {a.foto ? (
+                    <img
+                      className="aparicion__foto"
+                      src={a.foto.src}
+                      alt={a.foto.alt}
+                      width={a.foto.ancho}
+                      height={a.foto.alto}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <span aria-hidden="true" />
+                  )}
                 </article>
               ))}
             </div>
-            <p className="nota-assets">
-              Pendiente: fotografías propias de estas apariciones. Hasta que
-              existan, la sección se sostiene en texto y en las fuentes.
-            </p>
           </div>
         </section>
 

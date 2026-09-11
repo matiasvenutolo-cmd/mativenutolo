@@ -52,14 +52,17 @@ sin fuente.**
 
 Están marcados en el propio sitio donde faltan.
 
-- **Retrato.** Vertical, buena luz, mirada a cámara, mínimo 2000 px de alto. Va en
-  `public/` y reemplaza el bloque `.retrato-pendiente` de `app/page.tsx`.
-- **Foto del Microsoft AI Tour de Santiago.** Sostiene el capítulo Público.
+- **Retrato.** Guardar el archivo como `public/fotos/retrato.jpg` y cambiar el `src`
+  del hero en `app/page.tsx`. Mientras tanto el hero usa la foto de la charla en las
+  oficinas de Microsoft, que funciona pero no es un retrato.
 - **Dominio definitivo.** Completar `SITE.url`: afecta canónicas, sitemap y datos
   estructurados.
 - **URL directa del episodio del podcast.** Hoy se enlaza el programa, no el episodio.
-- **Academia de IA.** Si aparece una fuente pública con su alcance, se agrega a
-  `fuentes.ts` y se completa el caso `ai-first`.
+- **Academia de IA.** La cifra publicada es "+500 colaboradores", que es lo que dice la
+  fuente pública. Si el número actual es mayor, hace falta un post o material del banco
+  que lo respalde antes de cambiarlo.
+- **Derechos de las fotos.** Las de ADRHA parecen fotografía profesional del evento.
+  Confirmar con la organización antes de publicarlas.
 
 ## Lo que falta construir
 
