@@ -12,51 +12,64 @@ import {
 import { FUENTES } from '@/content/fuentes'
 import { SITE } from '@/lib/site'
 
-const TONOS_BIT = ['var(--s3)', 'var(--s4)', 'var(--s5)', 'var(--s6)', 'var(--s7)']
+const TONOS_BIT = [
+  'var(--n3)',
+  'var(--n4)',
+  'var(--n5)',
+  'var(--n6)',
+  'var(--n7)',
+]
 
-function Rotulo({ n, t }: { n: string; t: string }) {
-  return (
-    <div className="rotulo-seccion">
-      <span className="rotulo-seccion__n">{n}</span>
-      <span className="rotulo-seccion__t">{t}</span>
-    </div>
-  )
-}
+/** Las cuatro cifras de BIT, en el orden en que cuentan la historia. */
+const BIT_CIFRAS = [
+  { valor: '+51 %', rotulo: 'Interacciones por WhatsApp' },
+  { valor: '−15 pts', rotulo: 'Derivaciones a un agente humano' },
+  { valor: '+18 pts', rotulo: 'Satisfacción del cliente' },
+  { valor: '60+', rotulo: 'Trámites que resuelve el canal' },
+] as const
 
 export default function Home() {
-  const ideaAbierta = IDEAS[0]
-  const restoIdeas = IDEAS.slice(1)
-
   return (
     <>
       <Encabezado />
 
       <main id="inicio">
-        {/* ---------------- 01 · Hero ---------------- */}
-        <section className="hero">
-          <div className="contenedor">
+        {/* ============ apertura: hero + trayectoria, en negro ============ */}
+        <div className="banda banda--noche">
+          <section className="contenedor hero">
             <div className="hero__grid">
               <div>
-                <h1 className="display-1 hero__nombre">Matías Venutolo</h1>
-                <p className="hero__posicion">Negocio × Tecnología × IA</p>
-                <p className="hero__frase">
-                  Construyo organizaciones que funcionan de otra manera con
-                  inteligencia artificial.
+                <p className="hero__nombre">
+                  Matías Venutolo · Negocio × Tecnología × IA
                 </p>
+                <h1 className="hero__frase">
+                  Construyo organizaciones que funcionan de otra manera con{' '}
+                  <em>inteligencia artificial</em>.
+                </h1>
                 <p className="hero__cargo">
-                  {SITE.cargo}
-                  <span> · </span>
-                  {SITE.organizacion}
+                  {SITE.cargo} · {SITE.organizacion}
                 </p>
-                <ul className="evidencias evidencias--hero">
-                  <li>
-                    <Evidencia id="microsoftEs" claim="10+ agentes en 6 meses" />
+                <ul className="hero__kpis">
+                  <li className="hero__kpi">
+                    <b>10+</b>
+                    <span className="hero__kpi__rotulo">
+                      agentes de IA en seis meses
+                    </span>
+                    <Evidencia id="microsoftEs" />
                   </li>
-                  <li>
-                    <Evidencia id="pamoic" claim="2 reconocimientos al caso BIT" />
+                  <li className="hero__kpi">
+                    <b>7×</b>
+                    <span className="hero__kpi__rotulo">
+                      retorno sobre el costo
+                    </span>
+                    <Evidencia id="microsoftEn" />
                   </li>
-                  <li>
-                    <Evidencia id="aiTour" claim="Microsoft AI Tour, Santiago" />
+                  <li className="hero__kpi">
+                    <b>2</b>
+                    <span className="hero__kpi__rotulo">
+                      reconocimientos al caso BIT
+                    </span>
+                    <Evidencia id="pamoic" />
                   </li>
                 </ul>
               </div>
@@ -73,17 +86,11 @@ export default function Home() {
                 <figcaption>Buenos Aires</figcaption>
               </figure>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* ---------------- 02 · La línea ---------------- */}
-        <section className="seccion seccion--sin-regla" id="trayectoria">
-          <div className="contenedor">
-            <Rotulo n="02" t="Trayectoria" />
+          <section className="contenedor bloque" id="trayectoria">
             <div className="linea__intro">
-              <h2 className="display-2">
-                Una carrera es una línea, no una lista.
-              </h2>
+              <h2 className="d2">Una carrera es una línea, no una lista.</h2>
               <p className="linea__secuencia">
                 Negocio + tecnología → sistemas bancarios → canales digitales →
                 liderazgo → producto → cliente → dato → <b>IA</b> →{' '}
@@ -91,14 +98,14 @@ export default function Home() {
               </p>
             </div>
             <Linea />
-          </div>
-        </section>
+          </section>
+        </div>
 
-        {/* ---------------- 03 · Capacidades ---------------- */}
-        <section className="seccion" id="capacidades">
-          <div className="contenedor">
-            <Rotulo n="03" t="Qué construyo" />
-            <h2 className="display-2" style={{ marginBottom: 34, maxWidth: '20ch' }}>
+        {/* ============ qué construyo ============ */}
+        <div className="banda banda--claro">
+          <section className="contenedor bloque" id="capacidades">
+            <p className="rotulo">Qué construyo</p>
+            <h2 className="d2" style={{ marginBottom: 40, maxWidth: '18ch' }}>
               Cuatro cosas que sé hacer, y el caso donde cada una se probó.
             </h2>
             <div className="capacidades">
@@ -115,15 +122,15 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
-        {/* ---------------- 04 · BIT ---------------- */}
-        <section className="seccion" id="casos">
-          <div className="contenedor">
-            <Rotulo n="04" t="Caso principal" />
-            <div className="bit__encabezado">
-              <h2 className="display-2">
+        {/* ============ BIT, en negro ============ */}
+        <div className="banda banda--noche">
+          <section className="contenedor bloque" id="casos">
+            <p className="rotulo">Caso principal · BIT</p>
+            <div className="bit__cabecera">
+              <h2 className="d2">
                 BIT empezó respondiendo dónde estaba una tarjeta.
               </h2>
               <p className="lede">
@@ -133,12 +140,21 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bit__hitos">
+            <div className="bit__cifras">
+              {BIT_CIFRAS.map((c) => (
+                <div key={c.rotulo} className="bit__cifra">
+                  <b>{c.valor}</b>
+                  <span>{c.rotulo}</span>
+                </div>
+              ))}
+            </div>
+
+            <div>
               {BIT_HITOS.map((h, i) => (
                 <article
                   key={h.anio}
                   className="hito"
-                  style={{ ['--tono' as string]: TONOS_BIT[i] ?? 'var(--s7)' }}
+                  style={{ ['--tono' as string]: TONOS_BIT[i] ?? 'var(--n7)' }}
                 >
                   <span className="hito__punto" aria-hidden="true" />
                   <div className="hito__anio">{h.anio}</div>
@@ -153,16 +169,13 @@ export default function Home() {
               ))}
             </div>
 
-            <h3
-              className="etiqueta"
-              style={{ marginTop: 56, marginBottom: 6 }}
-            >
+            <p className="rotulo" style={{ marginTop: 60, marginBottom: 10 }}>
               Otros casos
-            </h3>
+            </p>
             <div className="indice">
               {OTROS_CASOS.map((c) => (
                 <a key={c.slug} className="indice__fila" href={`/casos/${c.slug}`}>
-                  <h4 className="indice__titulo">{c.titulo}</h4>
+                  <h3 className="indice__titulo">{c.titulo}</h3>
                   <p className="indice__linea">{c.linea}</p>
                   <span className="indice__meta">
                     {FUENTES[c.fuentes[0]].organizacion}
@@ -170,66 +183,66 @@ export default function Home() {
                 </a>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
-        {/* ---------------- 05 · Cómo pienso ---------------- */}
-        <section className="seccion" id="pensamiento">
-          <div className="contenedor">
-            <Rotulo n="05" t="Cómo pienso" />
-            <article className="idea-abierta">
-              <h2 className="idea-abierta__titulo">{ideaAbierta.titulo}</h2>
-              <div className="idea-abierta__cuerpo">
-                {ideaAbierta.cuerpo.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-            </article>
-            <div className="indice" style={{ borderTop: 0 }}>
-              {restoIdeas.map((idea) => (
+        {/* ============ cómo pienso + público, en claro ============ */}
+        <div className="banda banda--claro">
+          <section className="contenedor bloque" id="pensamiento">
+            <p className="rotulo">Cómo pienso</p>
+            <h2 className="d2" style={{ marginBottom: 40, maxWidth: '16ch' }}>
+              Seis posiciones que uso para decidir.
+            </h2>
+            <div className="ideas">
+              {IDEAS.map((idea) => (
                 <a
                   key={idea.slug}
-                  className="indice__fila"
+                  className="idea-fila"
                   href={`/ideas/${idea.slug}`}
                 >
-                  <h3 className="indice__titulo">{idea.titulo}</h3>
-                  <p className="indice__linea">{idea.bajada}</p>
-                  <span className="indice__meta">Leer</span>
+                  <h3 className="idea-fila__titulo">{idea.titulo}</h3>
+                  <p className="idea-fila__bajada">{idea.bajada}</p>
+                  <span className="idea-fila__mas">Leer ↗</span>
                 </a>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* ---------------- 06 · Público ---------------- */}
-        <section className="seccion" id="publico">
-          <div className="contenedor">
-            <Rotulo n="06" t="Público" />
-            <h2 className="display-2" style={{ marginBottom: 30, maxWidth: '18ch' }}>
+          <section
+            className="contenedor bloque"
+            id="publico"
+            style={{ paddingTop: 0 }}
+          >
+            <p className="rotulo">Público</p>
+            <h2 className="d2" style={{ marginBottom: 44, maxWidth: '16ch' }}>
               Cosas que me invitaron a explicar.
             </h2>
-            <div>
-              {APARICIONES.map((a) => (
+            <div className="publico">
+              {APARICIONES.map((a, i) => (
                 <article
                   key={a.titulo}
-                  className="aparicion"
-                  data-con-foto={Boolean(a.foto)}
+                  className={
+                    i === 0 ? 'aparicion aparicion--destacada' : 'aparicion'
+                  }
                 >
-                  <div className="aparicion__meta">
-                    <b>{a.lugar}</b>
-                    {a.formato}
-                    <br />
-                    {a.fecha}
-                  </div>
-                  <div>
+                  {a.foto ? (
+                    <img
+                      className="aparicion__foto"
+                      src={a.foto.src}
+                      alt={a.foto.alt}
+                      width={a.foto.ancho}
+                      height={a.foto.alto}
+                      loading={i === 0 ? 'eager' : 'lazy'}
+                      decoding="async"
+                    />
+                  ) : null}
+                  <div className="aparicion__cuerpo">
+                    <p className="aparicion__meta">
+                      <b>{a.lugar}</b> · {a.formato} · {a.fecha}
+                    </p>
                     <h3 className="aparicion__titulo">{a.titulo}</h3>
                     <p className="aparicion__texto">{a.texto}</p>
-                    <ul className="evidencias aparicion__fuentes">
-                      {a.fuentes.map((id) => (
-                        <li key={id}>
-                          <Evidencia id={id} />
-                        </li>
-                      ))}
+                    <ul className="evidencias">
                       {a.video ? (
                         <li>
                           <a
@@ -239,47 +252,41 @@ export default function Home() {
                             rel="noopener noreferrer"
                           >
                             <span>Ver la charla</span>
-                            <span className="evidencia__flecha" aria-hidden="true">
+                            <span
+                              className="evidencia__flecha"
+                              aria-hidden="true"
+                            >
                               ↗
                             </span>
                           </a>
                         </li>
                       ) : null}
+                      {a.fuentes.slice(0, 1).map((id) => (
+                        <li key={id}>
+                          <Evidencia id={id} />
+                        </li>
+                      ))}
                     </ul>
                   </div>
-                  {a.foto ? (
-                    <img
-                      className="aparicion__foto"
-                      src={a.foto.src}
-                      alt={a.foto.alt}
-                      width={a.foto.ancho}
-                      height={a.foto.alto}
-                      loading="lazy"
-                      decoding="async"
-                    />
-                  ) : (
-                    <span aria-hidden="true" />
-                  )}
                 </article>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
-        {/* ---------------- 07 · Qué sigue ---------------- */}
-        <section className="seccion">
-          <div className="contenedor">
-            <Rotulo n="07" t="Qué sigue" />
-            <div className="futuro">
-              <h2 className="display-2">La línea sigue.</h2>
+        {/* ============ cierre y contacto, en negro ============ */}
+        <div className="banda banda--noche">
+          <section className="contenedor bloque" id="contacto">
+            <div className="cierre">
+              <h2 className="d2">La línea sigue.</h2>
               <div>
-                <p className="parrafo futuro__texto">
+                <p>
                   Lo que aprendí construyendo una capacidad de inteligencia
                   artificial dentro de un banco se aplica a cualquier
                   organización grande que tenga clientes, procesos y gente que
                   los sostiene.
                 </p>
-                <p className="parrafo futuro__texto">
+                <p>
                   Me interesa el problema completo: la relación con el cliente
                   entendida de punta a punta, con la inteligencia artificial
                   como una capa permanente sobre el negocio y no como un
@@ -287,17 +294,8 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="futuro__cola" aria-hidden="true">
-              <i style={{ background: 'var(--s7)' }} />
-              <i />
-            </div>
-          </div>
-        </section>
+            <div className="cierre__cola" aria-hidden="true" />
 
-        {/* ---------------- 08 · Contacto ---------------- */}
-        <section className="seccion" id="contacto">
-          <div className="contenedor">
-            <Rotulo n="08" t="Contacto" />
             <div className="contacto">
               <div className="contacto__enlaces">
                 <a
@@ -312,20 +310,16 @@ export default function Home() {
                   <a className="contacto__enlace" href={`mailto:${SITE.email}`}>
                     {SITE.email}
                   </a>
-                ) : (
-                  <span className="etiqueta">
-                    Correo profesional pendiente de definir
-                  </span>
-                )}
+                ) : null}
               </div>
-              <p className="etiqueta" style={{ maxWidth: '24ch', lineHeight: 1.9 }}>
+              <p className="contacto__lugar">
                 Buenos Aires
                 <br />
                 Argentina
               </p>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </main>
 
       <footer className="pie">
@@ -344,7 +338,9 @@ export default function Home() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(datosEstructurados()) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(datosEstructurados()),
+        }}
       />
     </>
   )
@@ -365,6 +361,8 @@ function datosEstructurados() {
       alternateName: 'Mati Venutolo',
       jobTitle: SITE.cargo,
       description: SITE.descripcion,
+      image: `${SITE.url}/fotos/retrato.jpg`,
+      email: SITE.email || undefined,
       knowsLanguage: ['es', 'en'],
       nationality: { '@type': 'Country', name: 'Argentina' },
       worksFor: {

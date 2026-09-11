@@ -8,14 +8,14 @@ export default function NoEncontrado() {
       <main id="inicio" className="interior">
         <div className="contenedor">
           <header className="interior__cabecera">
-            <p className="etiqueta">Error 404</p>
-            <h1 className="display-1 interior__titulo">Esa página no existe</h1>
+            <p className="rotulo">Error 404</p>
+            <h1 className="d1 interior__titulo">Esa página no existe</h1>
             <p className="interior__bajada">
               Puede que el enlace haya cambiado. Desde el inicio se llega a
               todo.
             </p>
             <p style={{ marginTop: 24 }}>
-              <a className="contacto__enlace" href="/">
+              <a className="idea-fila__titulo" href="/">
                 Volver al inicio
               </a>
             </p>

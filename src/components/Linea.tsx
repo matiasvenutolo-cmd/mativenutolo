@@ -5,16 +5,16 @@ import { ETAPAS } from '@/content/trayectoria'
 import { Evidencias } from '@/components/Evidencia'
 
 const TONOS = [
-  'var(--s1)',
-  'var(--s2)',
-  'var(--s3)',
-  'var(--s4)',
-  'var(--s5)',
-  'var(--s6)',
-  'var(--s7)',
+  'var(--n1)',
+  'var(--n2)',
+  'var(--n3)',
+  'var(--n4)',
+  'var(--n5)',
+  'var(--n6)',
+  'var(--n7)',
 ]
 
-const ANCHO = '(min-width: 860px)'
+const ANCHO = '(min-width: 900px)'
 
 /**
  * La línea.

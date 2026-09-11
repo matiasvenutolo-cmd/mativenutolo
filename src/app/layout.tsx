@@ -1,19 +1,12 @@
 import type { Metadata } from 'next'
-import { Fraunces, Archivo, IBM_Plex_Mono } from 'next/font/google'
+import { Geist, IBM_Plex_Mono } from 'next/font/google'
 import { SITE } from '@/lib/site'
 import './globals.css'
 
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  style: ['normal', 'italic'],
-  display: 'swap',
-  variable: '--font-fraunces',
-})
-
-const archivo = Archivo({
+const geist = Geist({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-archivo',
+  variable: '--font-geist',
 })
 
 const plexMono = IBM_Plex_Mono({
@@ -62,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="es-AR"
-      className={`${fraunces.variable} ${archivo.variable} ${plexMono.variable}`}
+      className={`${geist.variable} ${plexMono.variable}`}
     >
       <body>
         <a className="saltar" href="#inicio">

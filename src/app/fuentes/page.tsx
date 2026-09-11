@@ -25,8 +25,8 @@ export default function FuentesPage() {
       <main id="inicio" className="interior">
         <div className="contenedor">
           <header className="interior__cabecera">
-            <p className="etiqueta">Transparencia</p>
-            <h1 className="display-1 interior__titulo">Fuentes</h1>
+            <p className="rotulo">Transparencia</p>
+            <h1 className="d1 interior__titulo">Fuentes</h1>
             <p className="interior__bajada">
               Todo lo que este sitio afirma sale de alguno de estos lugares. Lo
               que no tiene fuente pública no está publicado como hecho.

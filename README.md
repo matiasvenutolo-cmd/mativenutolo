@@ -1,7 +1,9 @@
 # matiasvenutolo.com
 
-Sitio personal de Matías Venutolo. Sistema **Archivo Vivo**, dirección **B — Narrativa**:
-la trayectoria es una línea continua que atraviesa el sitio y toma color a medida que avanza.
+Sitio personal de Matías Venutolo. Sistema **Archivo Vivo**, piel **Executive / Technology**:
+bandas oscuras y claras que alternan, una sans técnica y un solo verde de señal. La
+trayectoria es una línea continua que atraviesa el sitio, toma color a medida que avanza
+y vive como riel fijo en el borde izquierdo mientras se lee.
 
 Next.js 16 (App Router, estático), TypeScript, CSS propio. Sin CMS, sin framework de
 utilidades, sin librerías de animación.
@@ -20,7 +22,7 @@ src/
     casos/[slug]/         BIT, Centro de Excelencia, CRAC, AI First
     ideas/[slug]/         Las seis piezas de "Cómo pienso"
     fuentes/              El registro completo de evidencia
-    globals.css           Todo el sistema visual
+    globals.css           Todo el sistema visual: bandas, tipografía y la línea
   components/
     Encabezado.tsx        Navegación + la línea contraída como progreso
     Linea.tsx             La trayectoria
@@ -52,9 +54,6 @@ sin fuente.**
 
 Están marcados en el propio sitio donde faltan.
 
-- **Retrato.** Guardar el archivo como `public/fotos/retrato.jpg` y cambiar el `src`
-  del hero en `app/page.tsx`. Mientras tanto el hero usa la foto de la charla en las
-  oficinas de Microsoft, que funciona pero no es un retrato.
 - **Dominio definitivo.** Completar `SITE.url`: afecta canónicas, sitemap y datos
   estructurados.
 - **URL directa del episodio del podcast.** Hoy se enlaza el programa, no el episodio.

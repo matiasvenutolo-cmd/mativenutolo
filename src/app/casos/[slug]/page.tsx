@@ -47,8 +47,8 @@ export default async function CasoPage({
       <main id="inicio" className="interior">
         <article className="contenedor">
           <header className="interior__cabecera">
-            <p className="etiqueta">{caso.rotulo}</p>
-            <h1 className="display-1 interior__titulo">{caso.titulo}</h1>
+            <p className="rotulo">{caso.rotulo}</p>
+            <h1 className="d1 interior__titulo">{caso.titulo}</h1>
             <p className="interior__bajada">{caso.bajada}</p>
             <dl className="ficha">
               <div>
@@ -118,7 +118,7 @@ export default async function CasoPage({
           </div>
 
           <nav className="otros-casos" aria-label="Otros casos">
-            <p className="etiqueta">Seguir leyendo</p>
+            <p className="rotulo">Seguir leyendo</p>
             <div className="indice">
               {CASOS.filter((c) => c.slug !== caso.slug).map((c) => (
                 <a key={c.slug} className="indice__fila" href={`/casos/${c.slug}`}>

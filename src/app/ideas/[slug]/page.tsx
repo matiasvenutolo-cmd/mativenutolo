@@ -45,7 +45,7 @@ export default async function IdeaPage({
       <Encabezado />
       <main id="inicio" className="interior">
         <article className="contenedor idea">
-          <p className="etiqueta">Cómo pienso</p>
+          <p className="rotulo">Cómo pienso</p>
           <h1 className="idea__titulo">{idea.titulo}</h1>
           <p className="idea__bajada">{idea.bajada}</p>
           <div className="idea__cuerpo">
@@ -60,7 +60,7 @@ export default async function IdeaPage({
           </p>
 
           <nav className="otros-casos" aria-label="Otras ideas">
-            <p className="etiqueta">Otras ideas</p>
+            <p className="rotulo">Otras ideas</p>
             <div className="indice">
               {otras.map((o) => (
                 <a key={o.slug} className="indice__fila" href={`/ideas/${o.slug}`}>
