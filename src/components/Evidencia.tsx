@@ -1,4 +1,5 @@
 import { FUENTES, type FuenteId } from '@/content/fuentes'
+import { t, type Lang } from '@/lib/i18n'
 
 /**
  * Marca de evidencia. Va al final de la afirmación que sostiene, en la misma
@@ -7,18 +8,21 @@ import { FUENTES, type FuenteId } from '@/content/fuentes'
 export function Evidencia({
   id,
   claim,
+  lang = 'es',
 }: {
   id: FuenteId
   /** Afirmación que la fuente sostiene. Cuando existe, la marca la muestra
    *  primero y la fuente queda como respaldo. */
   claim?: string
+  lang?: Lang
 }) {
   const f = FUENTES[id]
+  const d = t(lang)
   const detalle =
     f.estado === 'institucional'
-      ? `${f.organizacion} · ${f.titulo} · reconocimiento o caso atribuido a la institución`
+      ? `${f.organizacion} · ${f.titulo} · ${d.evidencia.institucional}`
       : f.estado === 'autodeclarado'
-        ? `${f.organizacion} · ${f.titulo} · publicación propia`
+        ? `${f.organizacion} · ${f.titulo} · ${d.evidencia.autodeclarado}`
         : `${f.organizacion} · ${f.titulo}`
 
   return (
@@ -35,13 +39,13 @@ export function Evidencia({
         </span>
       ) : (
         <span>
-          {f.etiqueta} · {f.fecha}
+          {f.etiqueta} · {lang === 'es' ? f.fecha : f.fechaEn}
         </span>
       )}
       <span className="evidencia__flecha" aria-hidden="true">
         ↗
       </span>
-      <span className="sr-only"> (abre en una pestaña nueva)</span>
+      <span className="sr-only"> {d.evidencia.abreNueva}</span>
     </a>
   )
 }
@@ -49,16 +53,18 @@ export function Evidencia({
 export function Evidencias({
   ids,
   className,
+  lang = 'es',
 }: {
   ids: readonly FuenteId[]
   className?: string
+  lang?: Lang
 }) {
   if (!ids.length) return null
   return (
     <ul className={className ? `evidencias ${className}` : 'evidencias'}>
       {ids.map((id) => (
         <li key={id}>
-          <Evidencia id={id} />
+          <Evidencia id={id} lang={lang} />
         </li>
       ))}
     </ul>

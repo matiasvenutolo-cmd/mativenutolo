@@ -2,13 +2,17 @@
 
 import { useState } from 'react'
 import { BIT_FASES } from '@/content/home'
+import { BIT_FASES_EN } from '@/content/home.en'
 import { Evidencias } from '@/components/Evidencia'
 import { WhatsAppMock } from '@/components/WhatsAppMock'
+import { t, type Lang } from '@/lib/i18n'
 
 /** bit recorrido por fases: canal, producto, plataforma, IA. */
-export function CasoBit() {
-  const [activa, setActiva] = useState(BIT_FASES.length - 1)
-  const fase = BIT_FASES[activa]
+export function CasoBit({ lang = 'es' }: { lang?: Lang }) {
+  const fases = lang === 'es' ? BIT_FASES : BIT_FASES_EN
+  const [activa, setActiva] = useState(fases.length - 1)
+  const fase = fases[activa]
+  const d = t(lang)
 
   return (
     <section className="bit" id="bit">
@@ -16,14 +20,18 @@ export function CasoBit() {
         <div className="bit__cabeza reveal">
           <h2 className="bit__nombre">bit</h2>
           <p className="bit__que">
-            El canal conversacional del Banco Ciudad
+            {d.bit.que}
             <br />
-            Product Owner desde 2022
+            {d.bit.desde}
           </p>
         </div>
 
-        <div className="bit__fases" role="tablist" aria-label="Fases de bit">
-          {BIT_FASES.map((f, i) => (
+        <div
+          className="bit__fases"
+          role="tablist"
+          aria-label={lang === 'es' ? 'Fases de bit' : 'bit phases'}
+        >
+          {fases.map((f, i) => (
             <button
               key={f.clave}
               type="button"
@@ -36,10 +44,10 @@ export function CasoBit() {
               onClick={() => setActiva(i)}
               onKeyDown={(ev) => {
                 if (ev.key === 'ArrowRight') {
-                  setActiva((n) => (n + 1) % BIT_FASES.length)
+                  setActiva((n) => (n + 1) % fases.length)
                 }
                 if (ev.key === 'ArrowLeft') {
-                  setActiva((n) => (n - 1 + BIT_FASES.length) % BIT_FASES.length)
+                  setActiva((n) => (n - 1 + fases.length) % fases.length)
                 }
               }}
             >
@@ -58,7 +66,7 @@ export function CasoBit() {
           <div className="bit__col">
             <h3 className="bit__titulo">{fase.titulo}</h3>
             <p className="bit__linea">{fase.linea}</p>
-            <Evidencias ids={fase.fuentes} />
+            <Evidencias ids={fase.fuentes} lang={lang} />
 
             {fase.cifras ? (
               <div className="bit__cifras">
@@ -72,7 +80,7 @@ export function CasoBit() {
             ) : null}
           </div>
 
-          <WhatsAppMock />
+          <WhatsAppMock lang={lang} />
         </div>
       </div>
     </section>

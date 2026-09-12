@@ -1,10 +1,11 @@
 import { APARICIONES } from '@/content/home'
+import { APARICIONES_EN } from '@/content/home.en'
 import { Evidencia } from '@/components/Evidencia'
+import { t, type Lang } from '@/lib/i18n'
 
 /* El escenario solo acepta fotografías reales de evento. Las portadas de
    video, que traen texto quemado, viven abajo en su propia rejilla. */
 const ES_FOTO_REAL = (src: string) => !src.includes('/yt-')
-const CON_FOTO = APARICIONES.filter((a) => a.foto && ES_FOTO_REAL(a.foto.src))
 
 /**
  * Una grilla de charlas, cada una con su foto real. Nada de scroll
@@ -12,14 +13,18 @@ const CON_FOTO = APARICIONES.filter((a) => a.foto && ES_FOTO_REAL(a.foto.src))
  * la cantidad de fotos: eso rompía el scroll normal de la página. Es una
  * grilla, y el navegador la scrollea solo.
  */
-export function Escenario() {
+export function Escenario({ lang = 'es' }: { lang?: Lang }) {
+  const d = t(lang)
+  const apariciones = lang === 'es' ? APARICIONES : APARICIONES_EN
+  const conFoto = apariciones.filter((a) => a.foto && ES_FOTO_REAL(a.foto.src))
+
   return (
     <section className="escenario" id="charlas">
       <div className="contenedor">
-        <h2 className="d2 escenario__titulo reveal">Charlas y eventos.</h2>
+        <h2 className="d2 escenario__titulo reveal">{d.escenario.titulo}</h2>
 
         <div className="escenario__grilla reveal">
-          {CON_FOTO.map((a) => (
+          {conFoto.map((a) => (
             <article key={a.titulo} className="escena">
               <img
                 className="escena__foto"
@@ -44,13 +49,13 @@ export function Escenario() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span>Ver la charla</span>
+                      <span>{d.escenario.verCharla}</span>
                       <span className="evidencia__flecha" aria-hidden="true">
                         ↗
                       </span>
                     </a>
                   ) : null}
-                  <Evidencia id={a.fuentes[0]} />
+                  <Evidencia id={a.fuentes[0]} lang={lang} />
                 </div>
               </div>
             </article>

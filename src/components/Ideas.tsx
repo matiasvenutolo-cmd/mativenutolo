@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 import { IDEAS } from '@/content/home'
+import { IDEAS_EN } from '@/content/home.en'
+import { t, type Lang } from '@/lib/i18n'
 
 const ICONOS: Record<string, ReactNode> = {
   'una-metrica-no-es-la-mision': (
@@ -46,22 +48,22 @@ const ICONOS: Record<string, ReactNode> = {
   ),
 }
 
-export function Ideas() {
+export function Ideas({ lang = 'es' }: { lang?: Lang }) {
+  const d = t(lang)
+  const ideas = lang === 'es' ? IDEAS : IDEAS_EN
+  const base = lang === 'es' ? '' : '/en'
+
   return (
     <section className="ideas" id="ideas" aria-label="Ideas">
       <div className="contenedor">
         <div className="ideas__cabeza reveal">
-          <p className="ideas__rotulo">Cómo pienso</p>
-          <h2 className="ideas__t">Seis convicciones que uso para decidir.</h2>
-          <p className="ideas__bajada">
-            No son un método cerrado, son el criterio con el que priorizo
-            cuando negocio, tecnología y personas empujan para lados
-            distintos.
-          </p>
+          <p className="ideas__rotulo">{d.ideas.rotulo}</p>
+          <h2 className="ideas__t">{d.ideas.titulo}</h2>
+          <p className="ideas__bajada">{d.ideas.bajada}</p>
         </div>
 
         <div className="ideas__lista reveal">
-          {IDEAS.map((idea, i) => (
+          {ideas.map((idea, i) => (
             <article key={idea.slug} className="idea-c">
               <div className="idea-c__icono">
                 <svg
@@ -78,11 +80,11 @@ export function Ideas() {
                 <span className="idea-c__num">{i + 1}</span>
               </div>
               <h3 className="idea-c__t">
-                <a href={`/ideas/${idea.slug}`}>{idea.titulo}</a>
+                <a href={`${base}/ideas/${idea.slug}`}>{idea.titulo}</a>
               </h3>
               <p className="idea-c__b">{idea.bajada}</p>
               <p className="idea-c__pie">
-                Leer nota <span aria-hidden="true">→</span>
+                {d.ideas.leerNota} <span aria-hidden="true">→</span>
               </p>
             </article>
           ))}

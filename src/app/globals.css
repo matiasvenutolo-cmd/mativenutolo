@@ -219,6 +219,25 @@ a {
   color: var(--celeste);
 }
 
+.nav__idioma {
+  flex-shrink: 0;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--sobre-oscuro);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.nav__idioma:hover {
+  border-color: var(--celeste);
+  color: var(--celeste);
+}
+
 /* =========================================================================
    1 · Portada
    Un bloque de texto compacto y, debajo, un cuadro grande que sangra bajo

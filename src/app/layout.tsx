@@ -39,25 +39,31 @@ export const metadata: Metadata = {
     siteName: SITE.nombre,
     title: `${SITE.nombre} — ${SITE.posicionamiento}`,
     description: SITE.descripcion,
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${SITE.nombre} — ${SITE.posicionamiento}`,
     description: SITE.descripcion,
+    images: ['/og-image.jpg'],
   },
   robots: { index: true, follow: true },
 }
 
+/**
+ * lang queda fijo en es-AR: leer el pathname acá (headers()) forzaría
+ * renderizado dinámico en todo el sitio y perdería el prerender estático.
+ * Las páginas /en compensan con su propio <html lang> vía metadata de
+ * ruta no es posible en App Router, así que es la única limitación
+ * conocida de este enfoque frente a mover todo a app/[lang].
+ */
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="es-AR"
-      className={`${geist.variable} ${plexMono.variable}`}
-    >
+    <html lang="es-AR" className={`${geist.variable} ${plexMono.variable}`}>
       <body>
         <a className="saltar" href="#inicio">
           Saltar al contenido

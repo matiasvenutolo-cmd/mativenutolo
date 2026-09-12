@@ -1,18 +1,23 @@
 import { SITE } from '@/lib/site'
+import { t, type Lang } from '@/lib/i18n'
 
-export function PieInterior() {
+export function PieInterior({ lang = 'es' }: { lang?: Lang }) {
+  const d = t(lang)
+  const base = lang === 'es' ? '' : '/en'
+  const cargo = lang === 'es' ? SITE.cargo : SITE.cargoEn
+
   return (
     <footer className="pie">
       <div className="contenedor">
         <div className="pie__fila">
           <span>
-            <a href="/">Volver al inicio</a>
+            <a href={base || '/'}>{d.footer.volver}</a>
           </span>
           <span>
-            {SITE.nombre} · {SITE.cargo} · {SITE.organizacion}
+            {SITE.nombre} · {cargo} · {SITE.organizacion}
           </span>
           <span>
-            <a href="/fuentes">Todas las fuentes</a>
+            <a href={`${base}/fuentes`}>{d.footer.todasLasFuentes}</a>
           </span>
         </div>
       </div>

@@ -2,7 +2,9 @@
 
 import { useState } from 'react'
 import { CAPACIDADES } from '@/content/home'
+import { CAPACIDADES_EN } from '@/content/home.en'
 import { Evidencias } from '@/components/Evidencia'
+import { t, type Lang } from '@/lib/i18n'
 
 /**
  * Acordeón horizontal: paneles con foto de fondo, del mismo ancho en
@@ -16,18 +18,20 @@ import { Evidencias } from '@/components/Evidencia'
  * En pantallas angostas no hay hover, así que la media query de mobile
  * ignora el estado y muestra los paneles abiertos, apilados.
  */
-export function Capacidades() {
+export function Capacidades({ lang = 'es' }: { lang?: Lang }) {
   const [activo, setActivo] = useState(0)
+  const d = t(lang)
+  const capacidades = lang === 'es' ? CAPACIDADES : CAPACIDADES_EN
 
   return (
     <section className="capacidades" id="capacidades">
       <div className="contenedor capacidades__cabeza reveal">
-        <p className="rotulo">Qué construyo</p>
-        <h2 className="d2">Tres formas de conectar negocio con IA.</h2>
+        <p className="rotulo">{d.capacidades.rotulo}</p>
+        <h2 className="d2">{d.capacidades.titulo}</h2>
       </div>
 
       <div className="capacidades__fila reveal" onMouseLeave={() => setActivo(0)}>
-        {CAPACIDADES.map((c, i) => (
+        {capacidades.map((c, i) => (
           <article
             key={c.clave}
             className="cap-panel"
@@ -49,12 +53,12 @@ export function Capacidades() {
 
             <div className="cap-panel__cuerpo">
               <h3 className="cap-panel__t">
-                <a href={c.href ?? '#bit'}>{c.titulo}</a>
+                <a href={c.href ?? (lang === 'es' ? '#bit' : '/en#bit')}>{c.titulo}</a>
               </h3>
               <div className="cap-panel__detalle">
                 <p className="cap-panel__resumen">{c.resumen}</p>
                 <p className="cap-panel__prueba">{c.prueba}</p>
-                <Evidencias ids={c.fuentes.slice(0, 1)} />
+                <Evidencias ids={c.fuentes.slice(0, 1)} lang={lang} />
               </div>
             </div>
           </article>

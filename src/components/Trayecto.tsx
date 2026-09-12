@@ -2,7 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { ETAPAS } from '@/content/trayectoria'
+import { ETAPAS_EN } from '@/content/trayectoria.en'
 import { Evidencias } from '@/components/Evidencia'
+import { t, type Lang } from '@/lib/i18n'
 
 /**
  * Recorrido horizontal. Se arrastra con el dedo, se desplaza con la rueda
@@ -12,10 +14,12 @@ import { Evidencias } from '@/components/Evidencia'
  * La tarjeta más cerca del centro de la pista se agranda un poco: así el
  * recorrido se siente, no solo se lee. El resto queda en reposo.
  */
-export function Trayecto() {
+export function Trayecto({ lang = 'es' }: { lang?: Lang }) {
+  const etapas = lang === 'es' ? ETAPAS : ETAPAS_EN
+  const d = t(lang)
   const pista = useRef<HTMLDivElement>(null)
-  const [centro, setCentro] = useState(ETAPAS.length - 1)
-  const anios = ETAPAS.map((e) => e.anio)
+  const [centro, setCentro] = useState(etapas.length - 1)
+  const anios = etapas.map((e) => e.anio)
 
   useEffect(() => {
     const el = pista.current
@@ -62,9 +66,9 @@ export function Trayecto() {
               {'  ·  '}
             </span>
           ))}
-          <b data-activo={centro === ETAPAS.length - 1}>hoy</b>
+          <b data-activo={centro === etapas.length - 1}>{d.trayecto.hoy}</b>
         </p>
-        <p className="trayecto__ayuda">Desplazá →</p>
+        <p className="trayecto__ayuda">{d.trayecto.desplaza}</p>
       </div>
 
       <div
@@ -72,20 +76,24 @@ export function Trayecto() {
         ref={pista}
         tabIndex={0}
         role="group"
-        aria-label="Trayectoria profesional, de 2013 a hoy"
+        aria-label={
+          lang === 'es'
+            ? 'Trayectoria profesional, de 2013 a hoy'
+            : 'Professional trajectory, from 2013 to today'
+        }
       >
-        {ETAPAS.map((e, i) => (
+        {etapas.map((e, i) => (
           <article
             key={e.anio}
             className="hito-t"
-            data-presente={i === ETAPAS.length - 1}
+            data-presente={i === etapas.length - 1}
             data-centro={i === centro}
           >
             <p className="hito-t__anio">{e.anio}</p>
             <p className="hito-t__etiqueta">{e.etiqueta}</p>
             <p className="hito-t__sintesis">{e.sintesis}</p>
             {e.fuentes ? (
-              <Evidencias ids={e.fuentes} className="hito-t__fuentes" />
+              <Evidencias ids={e.fuentes} className="hito-t__fuentes" lang={lang} />
             ) : null}
           </article>
         ))}

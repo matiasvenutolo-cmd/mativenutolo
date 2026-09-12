@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { t, type Lang } from '@/lib/i18n'
 
 type Mensaje = {
   de: 'cliente' | 'bit'
@@ -45,6 +46,36 @@ const MENSAJES: Mensaje[] = [
   },
 ]
 
+const MENSAJES_EN: Mensaje[] = [
+  { de: 'cliente', texto: 'I want to check my balances', hora: '10:55' },
+  {
+    de: 'bit',
+    texto:
+      "Important: from this point on you'll be interacting with a Generative Artificial Intelligence tool. It will give you information about your Banco Ciudad account balance(s).\nResponses are generated automatically and may contain inaccuracies.",
+    hora: '10:55',
+    tipo: 'aviso',
+  },
+  {
+    de: 'bit',
+    texto:
+      'I see you have several accounts available. Pick one to check:\n\n1. USD Savings Account No. ...0452\n2. Pesos Savings Account No. ...5803\n\nWhich one would you like to check?',
+    hora: '10:55',
+  },
+  { de: 'cliente', texto: 'The one ending in 5803', hora: '10:56' },
+  {
+    de: 'bit',
+    texto: 'Here’s the balance for your Pesos Savings Account No. ...5803 😉\n\nAvailable balance: $284,360.12',
+    hora: '10:56',
+  },
+  { de: 'cliente', texto: 'Did I get any deposits?', hora: '10:57' },
+  {
+    de: 'bit',
+    texto:
+      "I didn't find any recent deposits in the available information. If you want, I can show you your latest transactions, or ask me something else 😊",
+    hora: '10:57',
+  },
+]
+
 const VENTANA = 5
 const ESCRIBIENDO_MS = 1000
 const PAUSA_MS = 1300
@@ -85,7 +116,9 @@ function Texto({ texto, destacarPrefijo }: { texto: string; destacarPrefijo?: st
  * hay una autorizada): por eso queda rotulado como ejemplo debajo del
  * teléfono, aunque el guion sigue el de una conversación real.
  */
-export function WhatsAppMock() {
+export function WhatsAppMock({ lang = 'es' }: { lang?: Lang }) {
+  const d = t(lang)
+  const mensajes = lang === 'es' ? MENSAJES : MENSAJES_EN
   const [visibles, setVisibles] = useState(0)
   const [escribiendo, setEscribiendo] = useState(false)
   const [checks, setChecks] = useState<Record<number, Check>>({})
@@ -103,9 +136,9 @@ export function WhatsAppMock() {
     const quieto = window.matchMedia('(prefers-reduced-motion: reduce)')
 
     if (quieto.matches) {
-      setVisibles(MENSAJES.length)
+      setVisibles(mensajes.length)
       const finales: Record<number, Check> = {}
-      MENSAJES.forEach((m, i) => {
+      mensajes.forEach((m, i) => {
         if (m.de === 'cliente') finales[i] = 'leido'
       })
       setChecks(finales)
@@ -128,9 +161,9 @@ export function WhatsAppMock() {
         setChecks({})
         await espera(PAUSA_INICIAL_MS)
 
-        for (let i = 0; i < MENSAJES.length; i++) {
+        for (let i = 0; i < mensajes.length; i++) {
           if (!montado.current) return
-          const m = MENSAJES[i]
+          const m = mensajes[i]
 
           if (m.de === 'bit') {
             setEscribiendo(true)
@@ -269,12 +302,12 @@ export function WhatsAppMock() {
                   />
                 </svg>
               </b>
-              <i>{escribiendo ? 'escribiendo…' : 'en línea'}</i>
+              <i>{escribiendo ? d.whatsapp.escribiendo : d.whatsapp.enLinea}</i>
             </span>
           </div>
 
           <div className="whatsapp-mock__chat" ref={chatRef}>
-            {MENSAJES.slice(desde, visibles).map((m, idx) => {
+            {mensajes.slice(desde, visibles).map((m, idx) => {
               const i = desde + idx
               const check = checks[i]
               return (
@@ -291,7 +324,9 @@ export function WhatsAppMock() {
                   )}
                   <Texto
                     texto={m.texto}
-                    destacarPrefijo={m.tipo === 'aviso' ? 'Importante:' : undefined}
+                    destacarPrefijo={
+                      m.tipo === 'aviso' ? (lang === 'es' ? 'Importante:' : 'Important:') : undefined
+                    }
                   />
                   <span className="whatsapp-mock__meta">
                     {m.hora}
@@ -320,7 +355,7 @@ export function WhatsAppMock() {
         </div>
       </div>
 
-      <p className="whatsapp-mock__rotulo">Así conversa bit · ejemplo ilustrativo</p>
+      <p className="whatsapp-mock__rotulo">{d.whatsapp.rotulo}</p>
     </div>
   )
 }

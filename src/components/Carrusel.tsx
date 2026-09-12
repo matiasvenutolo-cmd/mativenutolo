@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { APARICIONES } from '@/content/home'
-
-const VIDEOS = APARICIONES.filter((a) => a.video)
+import { APARICIONES_EN } from '@/content/home.en'
+import { t, type Lang } from '@/lib/i18n'
 
 /**
  * Carrusel horizontal con las charlas grabadas. Scroll-snap nativo por
@@ -11,7 +11,9 @@ const VIDEOS = APARICIONES.filter((a) => a.video)
  * falle el JavaScript; las flechas solo desplazan ese mismo scroll un
  * tramo, no reimplementan la navegación.
  */
-export function Carrusel() {
+export function Carrusel({ lang = 'es' }: { lang?: Lang }) {
+  const d = t(lang)
+  const videos = (lang === 'es' ? APARICIONES : APARICIONES_EN).filter((a) => a.video)
   const pista = useRef<HTMLDivElement>(null)
   /** Posición de reposo del primer tramo: el padding del carril hace que
    *  el snap "inicio" no sea 0, así que se mide en lugar de asumirla. */
@@ -45,16 +47,16 @@ export function Carrusel() {
   }
 
   return (
-    <section className="carrusel" aria-label="Charlas grabadas">
+    <section className="carrusel" aria-label={d.carrusel.rotulo}>
       <div className="contenedor carrusel__cabeza">
-        <p className="carrusel__rotulo">Charlas grabadas</p>
+        <p className="carrusel__rotulo">{d.carrusel.rotulo}</p>
         <div className="carrusel__nav">
           <button
             type="button"
             className="carrusel__flecha"
             onClick={() => desplazar(-1)}
             disabled={enInicio}
-            aria-label="Ver charla anterior"
+            aria-label={d.carrusel.anterior}
           >
             ←
           </button>
@@ -63,7 +65,7 @@ export function Carrusel() {
             className="carrusel__flecha"
             onClick={() => desplazar(1)}
             disabled={enFin}
-            aria-label="Ver charla siguiente"
+            aria-label={d.carrusel.siguiente}
           >
             →
           </button>
@@ -72,7 +74,7 @@ export function Carrusel() {
 
       <div className="carrusel__pista" ref={pista}>
         <div className="carrusel__riel">
-          {VIDEOS.map((v) => (
+          {videos.map((v) => (
             <a
               key={v.video}
               className="video-c"
