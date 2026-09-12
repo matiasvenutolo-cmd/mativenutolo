@@ -55,9 +55,9 @@ export const ETAPAS: Etapa[] = [
   },
   {
     anio: '2022',
-    sintesis: 'Product Owner de BIT.',
+    sintesis: 'Product Owner de bit.',
     etiqueta: 'Producto y cliente',
-    titulo: 'Product Owner de BIT',
+    titulo: 'Product Owner de bit',
     texto:
       'Me postulé y quedé como Product Owner del canal conversacional del banco. Fue el punto de inflexión: por primera vez negocio, cliente, producto, dato y tecnología estaban sobre la misma mesa y eran mi responsabilidad al mismo tiempo.',
     paso: 0.66,
@@ -65,11 +65,11 @@ export const ETAPAS: Etapa[] = [
   },
   {
     anio: '2023',
-    sintesis: 'BIT llega a WhatsApp. Dos reconocimientos PAMOIC.',
+    sintesis: 'bit llega a WhatsApp. Dos reconocimientos PAMOIC.',
     etiqueta: 'Dato e IA',
     titulo: 'El canal se vuelve una plataforma',
     texto:
-      'BIT llegó a WhatsApp y dejó de ser un bot de consultas para resolver trámites completos. Cada conversación empezó a generar datos sobre qué necesitaban los clientes, y esos datos abrieron la puerta a la automatización y a los primeros agentes. Ese mismo año el caso recibió dos reconocimientos PAMOIC.',
+      'bit llegó a WhatsApp y dejó de ser un bot de consultas para resolver trámites completos. Cada conversación empezó a generar datos sobre qué necesitaban los clientes, y esos datos abrieron la puerta a la automatización y a los primeros agentes. Ese mismo año el caso recibió dos reconocimientos PAMOIC.',
     paso: 0.82,
     fuentes: ['iprofesional', 'pamoic'],
   },

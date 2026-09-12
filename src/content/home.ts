@@ -9,6 +9,7 @@ export type Capacidad = {
   prueba: string
   fuentes: FuenteId[]
   href?: string
+  foto: { src: string; alt: string }
 }
 
 export const CAPACIDADES: Capacidad[] = [
@@ -21,6 +22,10 @@ export const CAPACIDADES: Capacidad[] = [
       'CRAC, el asistente interno, lo usan más de ocho de cada diez empleados del banco. Ese resultado fue lo que llevó a institucionalizar el enfoque.',
     fuentes: ['iproup', 'cronista'],
     href: '/casos/crac',
+    foto: {
+      src: '/fotos/academia-ia.jpg',
+      alt: 'Matias Venutolo dando una clase de la Academia de IA del Banco Ciudad',
+    },
   },
   {
     clave: 'cliente-proceso',
@@ -28,9 +33,13 @@ export const CAPACIDADES: Capacidad[] = [
     resumen:
       'Empezar por la necesidad, seguir el proceso de punta a punta y recién ahí decidir dónde entra la automatización. El humano se queda donde su criterio agrega algo.',
     prueba:
-      'BIT pasó de responder preguntas a resolver más de sesenta trámites, con menos derivaciones a un agente humano y más satisfacción.',
+      'bit pasó de responder preguntas a resolver más de sesenta trámites, con menos derivaciones a un agente humano y más satisfacción.',
     fuentes: ['meta'],
     href: '/casos/bit',
+    foto: {
+      src: '/fotos/adrha.jpg',
+      alt: 'Matias Venutolo hablando con micrófono durante un panel en ADRHA',
+    },
   },
   {
     clave: 'estrategia',
@@ -41,6 +50,10 @@ export const CAPACIDADES: Capacidad[] = [
       'Más de diez agentes en producción en seis meses, sobre una arquitectura definida desde el principio en lugar de armada por acumulación.',
     fuentes: ['microsoftEs'],
     href: '/casos/centro-de-excelencia',
+    foto: {
+      src: '/fotos/microsoft-argentina.jpg',
+      alt: 'Matias Venutolo presentando la transformación AI First del Banco Ciudad en las oficinas de Microsoft',
+    },
   },
   {
     clave: 'roi',
@@ -51,58 +64,14 @@ export const CAPACIDADES: Capacidad[] = [
       '2.400 horas anuales redirigidas a tareas de más valor y un retorno declarado de siete veces el costo.',
     fuentes: ['microsoftEs', 'microsoftEn'],
     href: '/casos/centro-de-excelencia',
+    foto: {
+      src: '/fotos/adrha-escenario.jpg',
+      alt: 'Matias Venutolo en el escenario de ADRHA junto a otro orador',
+    },
   },
 ]
 
-/* ---------- BIT ---------- */
-
-export type HitoBit = {
-  anio: string
-  titulo: string
-  texto: string
-  fuentes?: FuenteId[]
-}
-
-export const BIT_HITOS: HitoBit[] = [
-  {
-    anio: '2017',
-    titulo: 'Un bot de preguntas frecuentes',
-    texto:
-      'El banco pone en línea un asistente que responde consultas sobre préstamos, cuentas y trámites, construido sobre servicios cognitivos y una base de conocimiento. Atiende, pero no resuelve.',
-    fuentes: ['itsitio'],
-  },
-  {
-    anio: '2022',
-    titulo: 'Un canal con dueño',
-    texto:
-      'BIT pasa a tener un Product Owner y una hoja de ruta. La pregunta deja de ser cuántas consultas contesta y pasa a ser qué trámite podría resolver entero sin que el cliente llame.',
-    fuentes: ['chattigo'],
-  },
-  {
-    anio: '2023',
-    titulo: 'Llega a WhatsApp',
-    texto:
-      'El asistente deja el sitio del banco y se mueve adonde ya está el cliente. Ese mismo año el caso recibe dos reconocimientos PAMOIC: Plata en Mejor Estrategia de Operación Sector Ciudadano y Bronce en Mejor Estrategia en Customer Experience.',
-    fuentes: ['iprofesional', 'pamoic'],
-  },
-  {
-    anio: '2025',
-    titulo: 'Más de sesenta trámites',
-    texto:
-      'Turnos, activación de tarjetas, seguimiento de entregas, saldos, movimientos, reclamos. Entre enero y junio las interacciones por WhatsApp crecen un 51 %, las derivaciones a un agente humano bajan quince puntos y la satisfacción sube dieciocho.',
-    fuentes: ['meta'],
-  },
-  {
-    anio: 'Hoy',
-    titulo: 'Datos que alimentan agentes',
-    texto:
-      'Cada conversación dice qué necesita un cliente y dónde se traba un proceso. Ese dato es el que vuelve a la organización como automatización y como agentes, dentro y fuera del canal.',
-    fuentes: ['podcast'],
-  },
-]
-
-
-/* ---------- BIT, recorrido por fases ---------- */
+/* ---------- bit, recorrido por fases ---------- */
 
 export type FaseBit = {
   clave: string
@@ -117,21 +86,12 @@ export type FaseBit = {
 
 export const BIT_FASES: FaseBit[] = [
   {
-    clave: 'bot',
-    fase: 'Bot',
-    anio: '2017',
-    titulo: 'Responde preguntas frecuentes',
-    linea:
-      'Servicios cognitivos y una base de conocimiento sobre el sitio del banco. Contesta consultas de préstamos, cuentas y trámites.',
-    fuentes: ['itsitio'],
-  },
-  {
     clave: 'canal',
     fase: 'Canal',
     anio: '2022',
-    titulo: 'Toma dueño y hoja de ruta',
+    titulo: 'Nace con dueño y hoja de ruta',
     linea:
-      'La pregunta deja de ser cuántas consultas contesta y pasa a ser qué trámite resuelve entero sin que el cliente llame.',
+      'bit arranca como canal conversacional del banco, con Product Owner desde el primer día. La pregunta que lo define: qué trámite puede resolver entero sin que el cliente llame.',
     fuentes: ['chattigo'],
   },
   {
@@ -394,7 +354,7 @@ export const APARICIONES: Aparicion[] = [
     formato: 'Caso de éxito',
     titulo: 'Banco Ciudad',
     texto:
-      'El socio tecnológico del canal publica el caso completo, con el recorrido de BIT contado desde la implementación.',
+      'El socio tecnológico del canal publica el caso completo, con el recorrido de bit contado desde la implementación.',
     fuentes: ['chattigo2024'],
     video: 'https://www.youtube.com/watch?v=6vxeeb9SiYQ',
     foto: {
@@ -408,14 +368,14 @@ export const APARICIONES: Aparicion[] = [
     fecha: 'Agosto 2024',
     lugar: 'CFP Connections',
     formato: 'Presentación',
-    titulo: 'El caso BIT, chatbot del Banco Ciudad',
+    titulo: 'El caso bit, chatbot del Banco Ciudad',
     texto:
-      'El caso presentado ante una audiencia profesional externa, cuando el canal ya había dejado de ser un bot de preguntas frecuentes.',
+      'El caso presentado ante una audiencia profesional externa, con el canal ya resolviendo trámites completos y no solo respondiendo preguntas.',
     fuentes: ['cfp2024'],
     video: 'https://www.youtube.com/watch?v=r7YVbo4ZjZQ',
     foto: {
       src: '/fotos/yt-r7YVbo4ZjZQ.jpg',
-      alt: 'Portada de la presentación del caso BIT en CFP Connections',
+      alt: 'Portada de la presentación del caso bit en CFP Connections',
       ancho: 1280,
       alto: 720,
     },
@@ -424,14 +384,14 @@ export const APARICIONES: Aparicion[] = [
     fecha: 'Octubre 2023',
     lugar: 'Chattigo',
     formato: 'Charla',
-    titulo: 'BIT, transformando una organización a través de un chatbot',
+    titulo: 'bit, transformando una organización a través de un chatbot',
     texto:
       'La primera aparición pública del caso, un año después de tomar el producto. El título ya decía lo que iba a pasar después: el chatbot como excusa para cambiar la organización.',
     fuentes: ['chattigo2023'],
     video: 'https://www.youtube.com/watch?v=XdqDZ8s6EYI',
     foto: {
       src: '/fotos/yt-XdqDZ8s6EYI.jpg',
-      alt: 'Portada de la charla sobre BIT transformando una organización',
+      alt: 'Portada de la charla sobre bit transformando una organización',
       ancho: 1280,
       alto: 720,
     },

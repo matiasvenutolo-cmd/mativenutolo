@@ -1,22 +1,15 @@
 import { Nav } from '@/components/Nav'
 import { Portada } from '@/components/Portada'
 import { Trayecto } from '@/components/Trayecto'
+import { Capacidades } from '@/components/Capacidades'
 import { CasoBit } from '@/components/CasoBit'
 import { Escenario } from '@/components/Escenario'
 import { Carrusel } from '@/components/Carrusel'
 import { Evidencias } from '@/components/Evidencia'
 import { ETAPAS } from '@/content/trayectoria'
-import { CAPACIDADES, IDEAS, OTROS_CASOS } from '@/content/home'
+import { IDEAS, OTROS_CASOS } from '@/content/home'
 import { FUENTES } from '@/content/fuentes'
 import { SITE } from '@/lib/site'
-
-/** Los cuatro mundos que conecta. Es el marcador de cada eslabón. */
-const DOMINIO: Record<string, string> = {
-  'ai-first': 'Personas',
-  'cliente-proceso': 'Cliente',
-  estrategia: 'Sistema',
-  roi: 'Negocio',
-}
 
 export default function Home() {
   return (
@@ -28,25 +21,7 @@ export default function Home() {
 
         <Trayecto />
 
-        <section className="cadena" aria-label="Capacidades">
-          <div className="contenedor">
-            <div className="cadena__grilla">
-              {CAPACIDADES.map((c) => (
-                <article key={c.clave} className="eslabon">
-                  <p className="eslabon__paso">{DOMINIO[c.clave] ?? ''}</p>
-                  <h2 className="eslabon__titulo">
-                    <a href={c.href ?? '/#bit'}>{c.titulo}</a>
-                  </h2>
-                  <p className="eslabon__prueba">{c.prueba}</p>
-                  <Evidencias
-                    ids={c.fuentes.slice(0, 1)}
-                    className="eslabon__ev"
-                  />
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Capacidades />
 
         <CasoBit />
 

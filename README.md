@@ -2,7 +2,7 @@
 
 Sitio personal de Matias Venutolo. Azules profundos, celeste eléctrico y blanco,
 fotografía real en color y una composición distinta por sección: portada a pantalla
-completa, trayectoria horizontal, cadena de capacidades, BIT por fases y un escenario
+completa, trayectoria horizontal, cadena de capacidades, bit por fases y un escenario
 fijo para las charlas.
 
 Next.js 16 (App Router, estático), TypeScript, CSS propio. Sin CMS, sin framework de
@@ -19,7 +19,7 @@ npm run build
 src/
   app/
     page.tsx              Home: los ocho capítulos
-    casos/[slug]/         BIT, Centro de Excelencia, CRAC, AI First
+    casos/[slug]/         bit, Centro de Excelencia, CRAC, AI First
     ideas/[slug]/         Las seis piezas de "Cómo pienso"
     fuentes/              El registro completo de evidencia
     globals.css           Todo el sistema visual: bandas, tipografía y la línea
@@ -27,14 +27,14 @@ src/
     Nav.tsx               Cuatro entradas, mezcladas por diferencia
     Portada.tsx           Fotografía a pantalla completa que rota
     Trayecto.tsx          Recorrido horizontal de 2013 a hoy
-    CasoBit.tsx           BIT por fases: bot, canal, producto, plataforma, IA
+    CasoBit.tsx           bit por fases: canal, producto, plataforma, IA
     Escenario.tsx         Charlas: imagen fija que cambia con el scroll
     Evidencia.tsx         La marca de evidencia
   content/
     fuentes.ts            Registro de fuentes. Nada se afirma sin pasar por acá
     trayectoria.ts        Las siete etapas
     casos.ts              Los cuatro casos
-    home.ts               Capacidades, hitos de BIT, ideas, apariciones
+    home.ts               Capacidades, fases de bit, ideas, apariciones
 ```
 
 ## La regla del contenido

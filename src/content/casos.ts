@@ -21,25 +21,20 @@ export type Caso = {
 export const CASOS: Caso[] = [
   {
     slug: 'bit',
-    titulo: 'BIT',
+    titulo: 'bit',
     rotulo: 'Canal conversacional · Banco Ciudad',
     bajada:
-      'De un bot de preguntas frecuentes a un canal que resuelve más de sesenta trámites y genera el dato con el que se diseñan los procesos.',
-    periodo: '2017 → hoy',
-    rol: 'Product Owner desde 2022',
-    fuentes: ['itsitio', 'iprofesional', 'pamoic', 'meta', 'chattigo'],
+      'Un canal que nació con dueño en 2022 y hoy resuelve más de sesenta trámites, generando el dato con el que se rediseñan los procesos.',
+    periodo: '2022 → hoy',
+    rol: 'Product Owner desde el origen del producto',
+    fuentes: ['iprofesional', 'pamoic', 'meta', 'chattigo'],
     bloques: [
       {
         tipo: 'parrafo',
         texto:
-          'En 2017 el banco puso en línea un asistente capaz de responder consultas frecuentes sobre préstamos, cuentas y trámites, construido sobre servicios cognitivos y una base de conocimiento. Funcionaba: contestaba. Pero contestar y resolver no son lo mismo, y la diferencia entre las dos cosas es todo este caso.',
+          'En 2022 tomé bit, el canal conversacional del Banco Ciudad, como Product Owner. Desde el primer día elegí no mirar cuántas consultas contestaba: elegí mirar qué trámite completo podía resolver sin que el cliente tuviera que llamar, ir a una sucursal o esperar.',
       },
-      { tipo: 'subtitulo', texto: 'La pregunta cambia' },
-      {
-        tipo: 'parrafo',
-        texto:
-          'Cuando tomé el producto en 2022, la métrica que se miraba era cuántas consultas contestaba el bot. La cambiamos por otra: qué trámite completo podría resolver sin que el cliente tenga que llamar, ir a una sucursal o esperar. Esa pregunta obliga a salir del canal y a meterse en el proceso de atrás, que es donde vive el problema real.',
-      },
+      { tipo: 'subtitulo', texto: 'Seguir el proceso, no solo la conversación' },
       {
         tipo: 'parrafo',
         texto:
@@ -49,12 +44,12 @@ export const CASOS: Caso[] = [
       {
         tipo: 'parrafo',
         texto:
-          'En 2023 BIT dejó el sitio del banco y se mudó a WhatsApp. No fue una decisión de canal: fue aceptar que el cliente no va a entrar a un sitio para hacer algo que puede hacer en la aplicación donde ya está. Ese mismo año el caso recibió dos reconocimientos PAMOIC.',
+          'En 2023 bit llegó a WhatsApp. No fue una decisión de canal: fue aceptar que el cliente no va a entrar a una aplicación aparte para hacer algo que puede hacer en la que ya usa todos los días. Ese mismo año el caso recibió dos reconocimientos PAMOIC.',
       },
       {
         tipo: 'nota',
         texto:
-          'Los dos reconocimientos PAMOIC 2023 fueron otorgados al Banco de la Ciudad de Buenos Aires por el caso BIT: Plata en Mejor Estrategia de Operación Sector Ciudadano y Bronce en Mejor Estrategia en Customer Experience. Son premios a la institución y al equipo, no a una persona.',
+          'Los dos reconocimientos PAMOIC 2023 fueron otorgados al Banco de la Ciudad de Buenos Aires por el caso bit: Plata en Mejor Estrategia de Operación Sector Ciudadano y Bronce en Mejor Estrategia en Customer Experience. Son premios a la institución y al equipo, no a una persona.',
       },
       { tipo: 'subtitulo', texto: 'Lo que cambió, medido' },
       {
@@ -91,7 +86,7 @@ export const CASOS: Caso[] = [
       {
         tipo: 'parrafo',
         texto:
-          'Cada conversación dice qué necesita alguien y en qué punto exacto se traba. Acumulado, eso es un mapa de fricción del banco entero, construido por los propios clientes sin que nadie los encueste. Ese dato es el que después vuelve a la organización como automatización y como agentes, dentro y fuera de BIT.',
+          'Cada conversación dice qué necesita alguien y en qué punto exacto se traba. Acumulado, eso es un mapa de fricción del banco entero, construido por los propios clientes sin que nadie los encueste. Ese dato es el que después vuelve a la organización como automatización y como agentes, dentro y fuera de bit.',
       },
       {
         tipo: 'parrafo',

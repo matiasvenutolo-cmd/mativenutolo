@@ -70,7 +70,7 @@ export const FUENTES = {
     iso: '2023',
     estado: 'institucional',
     prueba:
-      'Plata en Mejor Estrategia de Operación Sector Ciudadano y Bronce en Mejor Estrategia en Customer Experience, ambos al Banco de la Ciudad de Buenos Aires por el caso BIT.',
+      'Plata en Mejor Estrategia de Operación Sector Ciudadano y Bronce en Mejor Estrategia en Customer Experience, ambos al Banco de la Ciudad de Buenos Aires por el caso bit.',
     loNombra: false,
   },
   meta: {
@@ -83,7 +83,7 @@ export const FUENTES = {
     iso: '2025',
     estado: 'institucional',
     prueba:
-      'Métricas de BIT medidas entre el 1 de enero y el 8 de junio de 2025, y el alcance de más de sesenta trámites.',
+      'Métricas de bit medidas entre el 1 de enero y el 8 de junio de 2025, y el alcance de más de sesenta trámites.',
     loNombra: false,
   },
   podcast: {
@@ -139,19 +139,6 @@ export const FUENTES = {
       'Alcance interno de CRAC y decisión del banco de institucionalizar el enfoque a partir de su resultado.',
     loNombra: true,
   },
-  itsitio: {
-    id: 'itsitio',
-    etiqueta: 'ITSitio',
-    organizacion: 'ITSitio',
-    titulo: 'Un chatbot inteligente para Banco Ciudad',
-    url: 'https://www.itsitio.com/casos-de-estudio/chatbot-inteligente-banco-ciudad/',
-    fecha: '2017',
-    iso: '2017',
-    estado: 'institucional',
-    prueba:
-      'El punto de partida: un bot de preguntas frecuentes sobre Cognitive Services, Bot Framework y Dynamics 365.',
-    loNombra: false,
-  },
   iprofesional: {
     id: 'iprofesional',
     etiqueta: 'iProfesional',
@@ -161,7 +148,7 @@ export const FUENTES = {
     fecha: 'junio 2023',
     iso: '2023-06',
     estado: 'verificado',
-    prueba: 'Cobertura independiente del salto de BIT a WhatsApp.',
+    prueba: 'Cobertura independiente del salto de bit a WhatsApp.',
     loNombra: false,
   },
   chattigo: {
@@ -173,7 +160,7 @@ export const FUENTES = {
     fecha: 's/f',
     estado: 'institucional',
     prueba:
-      'Video del partner tecnológico donde aparece hablando de BIT como referente del caso.',
+      'Video del partner tecnológico donde aparece hablando de bit como referente del caso.',
     loNombra: true,
   },
   academia: {
@@ -287,7 +274,7 @@ export const FUENTES = {
     fecha: 'agosto 2024',
     iso: '2024-08-02',
     estado: 'verificado',
-    prueba: 'Presentación del caso BIT ante una audiencia profesional externa.',
+    prueba: 'Presentación del caso bit ante una audiencia profesional externa.',
     loNombra: false,
   },
   chattigo2023: {
@@ -300,7 +287,7 @@ export const FUENTES = {
     iso: '2023-10-27',
     estado: 'institucional',
     prueba:
-      'Charla sobre BIT publicada por el socio tecnológico, un año después del inicio de su gestión del producto.',
+      'Charla sobre bit publicada por el socio tecnológico, un año después del inicio de su gestión del producto.',
     loNombra: true,
   },
   linkedin: {

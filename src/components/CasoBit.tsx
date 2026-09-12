@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { BIT_FASES } from '@/content/home'
 import { Evidencias } from '@/components/Evidencia'
 
-/** BIT recorrido por fases: bot, canal, producto, plataforma, IA. */
+/** bit recorrido por fases: canal, producto, plataforma, IA. */
 export function CasoBit() {
   const [activa, setActiva] = useState(BIT_FASES.length - 1)
   const fase = BIT_FASES[activa]
@@ -13,13 +13,13 @@ export function CasoBit() {
     <section className="bit" id="bit">
       <div className="contenedor">
         <div className="bit__cabeza">
-          <h2 className="bit__nombre">BIT</h2>
+          <h2 className="bit__nombre">bit</h2>
           <p className="bit__que">
             El canal conversacional del Banco Ciudad · Product Owner desde 2022
           </p>
         </div>
 
-        <div className="bit__fases" role="tablist" aria-label="Fases de BIT">
+        <div className="bit__fases" role="tablist" aria-label="Fases de bit">
           {BIT_FASES.map((f, i) => (
             <button
               key={f.clave}
