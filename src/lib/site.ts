@@ -1,12 +1,12 @@
 export const SITE = {
-  nombre: 'Matías Venutolo',
+  nombre: 'Matias Venutolo',
   url: 'https://mativenutolo.vercel.app',
   cargo: 'Director de Inteligencia Artificial y Automatización',
   organizacion: 'Banco Ciudad',
   organizacionUrl: 'https://www.bancociudad.com.ar',
   posicionamiento: 'Negocio × Tecnología × IA',
   descripcion:
-    'Matías Venutolo dirige inteligencia artificial y automatización en Banco Ciudad. Trabaja en el punto donde una necesidad del cliente se vuelve proceso y un proceso se vuelve una forma distinta de operar.',
+    'Matias Venutolo dirige inteligencia artificial y automatización en Banco Ciudad. Trabaja en el punto donde una necesidad del cliente se vuelve proceso y un proceso se vuelve una forma distinta de operar.',
   email: 'matias.venutolo@gmail.com',
   linkedin: 'https://www.linkedin.com/in/matiasvenutolo/',
   locale: 'es_AR',

@@ -27,7 +27,7 @@ export type Fuente = {
   estado: EstadoFuente
   /** Qué prueba exactamente esta fuente */
   prueba: string
-  /** Si la fuente nombra a Matías directamente */
+  /** Si la fuente nombra a Matias directamente */
   loNombra: boolean
 }
 

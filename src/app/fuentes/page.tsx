@@ -47,7 +47,7 @@ export default function FuentesPage() {
             </div>
             <div>
               <dt>Autodeclarado</dt>
-              <dd>Lo publicó Matías con su nombre y se cita como tal.</dd>
+              <dd>Lo publicó Matias con su nombre y se cita como tal.</dd>
             </div>
           </dl>
 

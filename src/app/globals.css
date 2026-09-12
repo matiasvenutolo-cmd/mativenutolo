@@ -183,26 +183,66 @@ a {
 
 /* =========================================================================
    1 · Portada
-   Una composición a pantalla completa: fotografía que cambia,
-   nombre a gran escala y una franja de datos abajo.
+   Un bloque de texto compacto y, debajo, un cuadro grande que sangra bajo
+   el pliegue con movimiento continuo (no una diapositiva que se detiene).
    ========================================================================= */
 
 .portada {
   position: relative;
-  min-height: 100svh;
   background: var(--abismo);
   color: var(--sobre-oscuro);
+}
+
+.portada__texto {
+  padding-block: clamp(116px, 17vw, 176px) clamp(36px, 5vw, 56px);
+}
+
+.portada__eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--celeste);
+  margin: 0 0 16px;
+}
+
+.portada__nombre {
+  font-size: clamp(28px, 5.6vw, 76px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  color: var(--blanco);
+}
+
+.portada__rol {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  overflow: hidden;
-  isolation: isolate;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sobre-oscuro-2);
+  margin: 0;
+  max-width: 62ch;
+}
+
+.portada__rol b {
+  color: var(--sobre-oscuro);
+  font-weight: 500;
+}
+
+.portada__visual {
+  position: relative;
 }
 
 .portada__marco {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+  position: relative;
+  height: clamp(420px, 78vh, 820px);
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .portada__foto {
@@ -213,6 +253,7 @@ a {
   object-fit: cover;
   object-position: center 28%;
   opacity: 0;
+  transform: scale(1.05);
 }
 
 .portada__foto[data-activa='true'] {
@@ -221,79 +262,43 @@ a {
 
 @media (prefers-reduced-motion: no-preference) {
   .portada__foto {
-    transition: opacity 1.4s ease, transform 9s linear;
-    transform: scale(1.04);
+    transition: opacity 1.4s ease;
+    animation: deriva 24s ease-in-out infinite alternate;
   }
-  .portada__foto[data-activa='true'] {
-    transform: scale(1);
+
+  .portada__foto:nth-of-type(1) { animation-delay: -1s; }
+  .portada__foto:nth-of-type(2) { animation-delay: -6s; }
+  .portada__foto:nth-of-type(3) { animation-delay: -11s; }
+  .portada__foto:nth-of-type(4) { animation-delay: -16s; }
+  .portada__foto:nth-of-type(5) { animation-delay: -21s; }
+}
+
+@keyframes deriva {
+  from {
+    transform: scale(1.06) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.18) translate3d(calc(var(--fase, 1) * -2.4%), -1.6%, 0);
   }
 }
 
-/* velo: la foto se hunde en el azul en lugar de recortarse */
+/* velo suave: solo cose el borde entre el texto y la foto */
 .portada__velo {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    linear-gradient(
-      to top,
-      var(--abismo) 4%,
-      rgba(4, 26, 46, 0.78) 30%,
-      rgba(4, 26, 46, 0.24) 62%,
-      rgba(4, 26, 46, 0.5) 100%
-    ),
-    linear-gradient(to right, rgba(4, 26, 46, 0.82) 0%, rgba(4, 26, 46, 0.04) 62%);
-}
-
-.portada__cuerpo {
-  position: relative;
-  z-index: 2;
-  padding-block: 120px 34px;
-}
-
-.portada__eyebrow {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--celeste);
-  margin: 0 0 18px;
-}
-
-.portada__nombre {
-  font-size: clamp(46px, 12.5vw, 168px);
-  font-weight: 700;
-  line-height: 0.85;
-  letter-spacing: -0.055em;
-  margin: 0 0 22px;
-  color: var(--blanco);
-}
-
-.portada__nombre span {
-  display: block;
-}
-
-.portada__rol {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 28px;
-  font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--sobre-oscuro-2);
-  margin: 0 0 42px;
-  max-width: 62ch;
-}
-
-.portada__rol b {
-  color: var(--sobre-oscuro);
-  font-weight: 500;
+  background: linear-gradient(
+    to bottom,
+    var(--abismo) 0%,
+    rgba(4, 26, 46, 0.32) 14%,
+    rgba(4, 26, 46, 0.04) 34%,
+    rgba(4, 26, 46, 0.22) 100%
+  );
 }
 
 .portada__pie {
   position: relative;
-  z-index: 2;
+  background: var(--abismo-2);
   border-top: 1px solid var(--regla-oscura);
 }
 
@@ -302,7 +307,7 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  padding-block: 16px 22px;
+  padding-block: 14px;
 }
 
 .portada__creditos {
@@ -360,9 +365,19 @@ a {
   margin: 0;
 }
 
+.trayecto__anios span,
+.trayecto__anios b {
+  transition: color 0.25s ease;
+}
+
+.trayecto__anios span[data-activo='true'],
 .trayecto__anios b {
   color: var(--electrico);
   font-weight: 500;
+}
+
+.trayecto__anios b[data-activo='true'] {
+  color: var(--celeste-claro);
 }
 
 .trayecto__ayuda {
@@ -397,6 +412,21 @@ a {
   min-height: 300px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  transform: scale(0.94);
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hito-t {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  }
+}
+
+.hito-t[data-centro='true'] {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 1;
 }
 
 .hito-t:last-child {

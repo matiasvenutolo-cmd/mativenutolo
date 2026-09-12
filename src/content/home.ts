@@ -185,7 +185,7 @@ export const OTROS_CASOS: CasoBreve[] = [
     slug: 'centro-de-excelencia',
     titulo: 'Centro de Excelencia en IA',
     linea:
-      'Cómo se construye una capacidad de inteligencia artificial dentro de un banco, con hoja de ruta, agentes en producción y una conversación de retorno.',
+      'Cómo se construye una capacidad de inteligencia artificial dentro de un banco, con hoja de ruta, agentes en producción y un retorno que se puede medir en dólares.',
     fuentes: ['microsoftEs', 'microsoftEn'],
     disponible: true,
   },
@@ -201,7 +201,7 @@ export const OTROS_CASOS: CasoBreve[] = [
     slug: 'ai-first',
     titulo: 'AI First',
     linea:
-      'La capacidad organizacional: capacitación, tecnología, recursos humanos y operaciones mirando los mismos problemas de otra manera.',
+      'La capacidad organizacional: capacitación, tecnología, recursos humanos y operaciones, todo apuntando al mismo lugar.',
     fuentes: ['iproup'],
     disponible: true,
   },
@@ -262,7 +262,7 @@ export const IDEAS: Idea[] = [
     titulo: 'AI First empieza por las personas',
     bajada: 'La tecnología sola no genera adopción.',
     cuerpo: [
-      'AI First no es darle a todo el mundo una licencia y esperar. Es construir una capacidad común para que la gente empiece a mirar su propio trabajo y se pregunte si eso que hace hace años podría hacerse de otra manera.',
+      'AI First no es darle a todo el mundo una licencia y esperar. Es construir una capacidad común para que la gente empiece a mirar el trabajo que viene haciendo de la misma forma hace años y se pregunte si hay otra manera de resolverlo.',
       'La adopción se expande con ejemplos visibles, con velocidad y con personas de adentro que se vuelven referentes. Un mandato centralizado consigue cumplimiento; un caso que el de al lado vio funcionar consigue interés, que es otra cosa.',
       'Cuando alguien que no es del área técnica arma su propio agente y le resuelve un problema concreto, la transformación deja de necesitar que la empujen.',
     ],
@@ -321,7 +321,7 @@ export const APARICIONES: Aparicion[] = [
     fuentes: ['microsoftArg'],
     foto: {
       src: '/fotos/microsoft-argentina.jpg',
-      alt: 'Matías Venutolo presentando frente a una pantalla que dice Transformación AI First en Banco Ciudad',
+      alt: 'Matias Venutolo presentando frente a una pantalla que dice Transformación AI First en Banco Ciudad',
       ancho: 1152,
       alto: 1536,
     },
@@ -337,7 +337,7 @@ export const APARICIONES: Aparicion[] = [
     video: 'https://www.youtube.com/watch?v=RiX0te7gQOU',
     foto: {
       src: '/fotos/revolucia.jpg',
-      alt: 'Pieza del evento Revolucia anunciando la charla de Matías Venutolo sobre el caso Banco Ciudad',
+      alt: 'Pieza del evento Revolucia anunciando la charla de Matias Venutolo sobre el caso Banco Ciudad',
       ancho: 1080,
       alto: 1440,
     },
@@ -383,7 +383,7 @@ export const APARICIONES: Aparicion[] = [
     fuentes: ['adrha', 'cronista'],
     foto: {
       src: '/fotos/adrha.jpg',
-      alt: 'Matías Venutolo hablando con micrófono durante un panel en ADRHA',
+      alt: 'Matias Venutolo hablando con micrófono durante un panel en ADRHA',
       ancho: 800,
       alto: 533,
     },

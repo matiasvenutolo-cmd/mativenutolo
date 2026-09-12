@@ -75,11 +75,11 @@ export const ETAPAS: Etapa[] = [
   },
   {
     anio: '2025',
-    sintesis: 'Centro de Excelencia en IA. Agentes en producción y una conversación de retorno.',
+    sintesis: 'Centro de Excelencia en IA. Diez agentes en producción y un retorno medido en dólares.',
     etiqueta: 'Transformación organizacional',
     titulo: 'De un producto a una capacidad de toda la empresa',
     texto:
-      'El trabajo dejó de ser un canal y pasó a ser una capacidad instalada: un centro de excelencia, una hoja de ruta, agentes en producción, adopción medida y una conversación de retorno con la conducción del banco. Hoy dirijo inteligencia artificial y automatización.',
+      'El trabajo dejó de ser un canal y pasó a ser una capacidad instalada: un centro de excelencia, una hoja de ruta, agentes en producción y un retorno que se puede explicar en una reunión de directorio. Hoy dirijo inteligencia artificial y automatización.',
     paso: 1,
     fuentes: ['microsoftEs', 'podcast'],
   },

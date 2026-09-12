@@ -1,6 +1,6 @@
 # matiasvenutolo.com
 
-Sitio personal de Matías Venutolo. Azules profundos, celeste eléctrico y blanco,
+Sitio personal de Matias Venutolo. Azules profundos, celeste eléctrico y blanco,
 fotografía real en color y una composición distinta por sección: portada a pantalla
 completa, trayectoria horizontal, cadena de capacidades, BIT por fases y un escenario
 fijo para las charlas.
@@ -46,14 +46,14 @@ su estado:
 |---|---|
 | `verificado` | Una fuente pública independiente lo dice |
 | `institucional` | Es real pero corresponde al banco o a un socio, no a una persona |
-| `autodeclarado` | Lo publicó Matías con su nombre y se cita como tal |
+| `autodeclarado` | Lo publicó Matias con su nombre y se cita como tal |
 | `proyeccion` | Cifra potencial, nunca presentada como logro |
 
 Lo autodeclarado sin URL (formación, etapas anteriores a 2022) se cuenta en primera
 persona y se distingue por la ausencia de marca de evidencia. **No agregar afirmaciones
 sin fuente.**
 
-## Pendientes de Matías
+## Pendientes de Matias
 
 Están marcados en el propio sitio donde faltan.
 

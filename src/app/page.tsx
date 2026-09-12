@@ -94,7 +94,7 @@ export default function Home() {
           <div className="contenedor">
             <div className="cierre__grid">
               <h2 className="cierre__t">
-                Trece años adentro de una organización grande.
+                Empecé haciendo testing. Hoy dirijo IA y automatización.
               </h2>
               <div>
                 <p className="cierre__p">
@@ -102,9 +102,9 @@ export default function Home() {
                   artificial. En ese orden y por ese motivo.
                 </p>
                 <p className="cierre__p">
-                  Me interesa el problema completo: la relación con el cliente
-                  de punta a punta, con la inteligencia artificial como capa
-                  permanente sobre el negocio.
+                  El mismo criterio sirve en cualquier organización grande:
+                  entender el proceso completo antes de tocar la herramienta,
+                  y no soltarlo hasta que el cliente lo note.
                 </p>
               </div>
             </div>

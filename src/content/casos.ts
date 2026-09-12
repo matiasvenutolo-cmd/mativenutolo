@@ -120,7 +120,7 @@ export const CASOS: Caso[] = [
         tipo: 'cita',
         texto:
           'Definimos una estrategia clara con Microsoft 365 Copilot para eficientizar la productividad, también incorporamos Copilot Studio para el desarrollo de agentes específicos y escalamos con soluciones en Microsoft Azure. Esta estructura nos permitió desplegar una hoja de ruta ordenada y efectiva para integrar IA en todos los niveles del banco.',
-        quien: 'Matías Venutolo',
+        quien: 'Matias Venutolo',
         fuente: 'microsoftEs',
       },
       { tipo: 'subtitulo', texto: 'Primero la arquitectura, después los casos' },
@@ -172,7 +172,7 @@ export const CASOS: Caso[] = [
         tipo: 'cita',
         texto:
           'Today, with the same team and more solutions, we’re generating a return seven times greater than the cost.',
-        quien: 'Matías Venutolo',
+        quien: 'Matias Venutolo',
         fuente: 'microsoftEn',
       },
       {
@@ -245,7 +245,7 @@ export const CASOS: Caso[] = [
     titulo: 'AI First',
     rotulo: 'Cultura y capacidad · Banco Ciudad',
     bajada:
-      'Que la organización entera aprenda a mirar su propio trabajo y preguntarse si podría hacerse de otra manera.',
+      'Que la organización entera aprenda a mirar su propio trabajo y encontrar una forma distinta de resolverlo.',
     periodo: '2024 → hoy',
     rol: 'Parte del alcance del Centro de Excelencia en IA',
     fuentes: ['academia', 'iproup', 'microsoftEs'],
@@ -253,7 +253,7 @@ export const CASOS: Caso[] = [
       {
         tipo: 'parrafo',
         texto:
-          'AI First no es repartir licencias. Es construir una capacidad común para que cualquier persona, en cualquier área, pueda mirar algo que hace hace años y preguntarse si eso podría hacerse de otra manera. La pregunta es el producto.',
+          'AI First no es repartir licencias. Es construir una capacidad común para que cualquier persona, en cualquier área, pueda mirar una tarea que repite desde hace años y preguntarse si hay una forma distinta de resolverla. La pregunta es el producto.',
       },
       {
         tipo: 'parrafo',
