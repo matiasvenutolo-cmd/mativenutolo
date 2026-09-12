@@ -8,7 +8,6 @@ import { Evidencia } from '@/components/Evidencia'
    video, que traen texto quemado, viven abajo en su propia rejilla. */
 const ES_FOTO_REAL = (src: string) => !src.includes('/yt-')
 const CON_FOTO = APARICIONES.filter((a) => a.foto && ES_FOTO_REAL(a.foto.src))
-const GRABACIONES = APARICIONES.filter((a) => a.video)
 
 /**
  * Escenario fijo: la fotografía ocupa la pantalla y cambia al hacer scroll.
@@ -124,38 +123,6 @@ export function Escenario() {
           </li>
         ))}
       </ul>
-
-      <div className="grabaciones">
-        <div className="contenedor">
-          <p className="grabaciones__rotulo">Charlas grabadas</p>
-          <div className="grabaciones__grilla">
-            {GRABACIONES.map((g) => (
-              <a
-                key={g.video}
-                className="grabacion"
-                href={g.video}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {g.foto ? (
-                  <img
-                    src={g.foto.src}
-                    alt=""
-                    width={g.foto.ancho}
-                    height={g.foto.alto}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : null}
-                <p className="grabacion__meta">
-                  {g.lugar} · {g.fecha}
-                </p>
-                <p className="grabacion__t">{g.titulo}</p>
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   )
 }

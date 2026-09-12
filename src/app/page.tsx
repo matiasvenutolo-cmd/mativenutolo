@@ -3,6 +3,7 @@ import { Portada } from '@/components/Portada'
 import { Trayecto } from '@/components/Trayecto'
 import { CasoBit } from '@/components/CasoBit'
 import { Escenario } from '@/components/Escenario'
+import { Carrusel } from '@/components/Carrusel'
 import { Evidencias } from '@/components/Evidencia'
 import { ETAPAS } from '@/content/trayectoria'
 import { CAPACIDADES, IDEAS, OTROS_CASOS } from '@/content/home'
@@ -69,6 +70,8 @@ export default function Home() {
         </section>
 
         <Escenario />
+
+        <Carrusel />
 
         <section className="ideas" id="ideas" aria-label="Ideas">
           <div className="contenedor">
