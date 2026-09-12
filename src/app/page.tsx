@@ -69,7 +69,7 @@ export default function Home() {
           <div className="contenedor">
             <div className="cierre__grid">
               <h2 className="cierre__t">
-                Empecé haciendo testing. Hoy dirijo IA y automatización.
+                El próximo paso es hacer esto a mayor escala.
               </h2>
               <div>
                 <p className="cierre__p">

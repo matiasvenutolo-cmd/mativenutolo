@@ -132,27 +132,12 @@ a {
   left: 0;
   right: 0;
   z-index: 100;
-  mix-blend-mode: difference;
-  pointer-events: none;
-  opacity: 1;
-  visibility: visible;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .nav {
-    transition: opacity 0.35s ease, visibility 0s linear 0s;
-  }
-}
-
-.nav[data-visible='false'] {
-  opacity: 0;
-  visibility: hidden;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .nav[data-visible='false'] {
-    transition: opacity 0.35s ease, visibility 0s linear 0.35s;
-  }
+  background: linear-gradient(
+    to bottom,
+    rgba(4, 10, 18, 0.78) 0%,
+    rgba(4, 10, 18, 0.5) 70%,
+    transparent 100%
+  );
 }
 
 .nav__fila {
@@ -166,7 +151,6 @@ a {
 
 .nav__marca,
 .nav__enlaces a {
-  pointer-events: auto;
   text-decoration: none;
 }
 
@@ -759,130 +743,84 @@ a {
 
 /* =========================================================================
    5 · Charlas
-   Escenario fijo: la imagen ocupa la pantalla y cambia con el scroll.
+   Una grilla de fotos reales. Sin scroll secuestrado.
    ========================================================================= */
 
 .escenario {
   position: relative;
   background: var(--abismo);
   color: var(--sobre-oscuro);
+  padding-block: clamp(64px, 9vw, 120px);
 }
 
-.escenario__fijo {
-  position: sticky;
-  top: 0;
-  height: 100svh;
-  overflow: hidden;
-  isolation: isolate;
+.escenario__titulo {
+  margin-bottom: 36px;
+  max-width: 16ch;
 }
 
-.escenario__foto {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
+.escenario__grilla {
+  display: grid;
+  gap: 2px;
+  background: var(--regla-oscura);
 }
 
-.escenario__foto[data-activa='true'] {
-  opacity: 1;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .escenario__foto {
-    transition: opacity 0.7s ease;
+@media (min-width: 700px) {
+  .escenario__grilla {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-.escenario__velo {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    to top,
-    var(--abismo) 4%,
-    rgba(4, 26, 46, 0.82) 40%,
-    rgba(4, 26, 46, 0.3) 100%
-  );
+.escena {
+  background: var(--abismo);
+  display: flex;
+  flex-direction: column;
 }
 
-.escenario__texto {
-  position: absolute;
-  inset: auto 0 0 0;
-  z-index: 2;
-  padding-bottom: clamp(40px, 7vh, 80px);
+.escena__foto {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
-.escenario__rotulo {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--celeste);
-  margin: 0 0 14px;
+.escena__cuerpo {
+  padding: 22px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-.escenario__ficha {
-  max-width: 30ch;
-}
-
-.escenario__lugar {
-  font-size: clamp(30px, 5vw, 60px);
-  font-weight: 700;
-  letter-spacing: -0.05em;
-  line-height: 0.94;
-  margin: 0 0 12px;
-  color: var(--blanco);
-}
-
-.escenario__meta {
+.escena__meta {
   font-family: var(--mono);
   font-size: 9.5px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: var(--sobre-oscuro-2);
+  color: var(--sobre-oscuro-3);
   margin: 0 0 10px;
 }
 
-.escenario__que {
-  font-size: 16px;
-  line-height: 1.45;
+.escena__t {
+  font-size: clamp(19px, 2.2vw, 23px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.14;
+  margin: 0 0 10px;
+  color: var(--blanco);
+  max-width: 32ch;
+}
+
+.escena__texto {
+  font-size: 14.5px;
+  line-height: 1.55;
   color: var(--sobre-oscuro-2);
   margin: 0 0 16px;
-  max-width: 42ch;
+  max-width: 46ch;
 }
 
-.escenario__acciones {
+.escena__acciones {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px 24px;
-}
-
-.escenario__marcas {
-  position: relative;
-  z-index: 3;
-}
-
-.escenario__marca {
-  height: 100svh;
-}
-
-.escenario__cuenta {
-  position: absolute;
-  right: var(--gutter);
-  bottom: clamp(40px, 7vh, 80px);
-  z-index: 2;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  color: var(--sobre-oscuro-3);
-  font-variant-numeric: tabular-nums;
-}
-
-.escenario__cuenta b {
-  color: var(--blanco);
-  font-weight: 500;
+  gap: 10px 22px;
+  margin-top: auto;
 }
 
 /* =========================================================================

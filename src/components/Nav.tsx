@@ -1,6 +1,3 @@
-'use client'
-
-import { useEffect, useState } from 'react'
 import { SITE } from '@/lib/site'
 
 const ENLACES = [
@@ -11,30 +8,14 @@ const ENLACES = [
 ]
 
 /**
- * Cuatro entradas y el nombre. La mezcla por diferencia la vuelve blanca
- * sobre las bandas oscuras y negra sobre las claras.
- *
- * El hero ya tiene sus propios rótulos dibujados arriba de todo, así que
- * la nav se mantiene afuera mientras se lo está viendo y aparece apenas
- * se empieza a scrollear. Visible por defecto: si el JS no corre, queda
- * a la vista en lugar de desaparecer para siempre.
+ * Cuatro entradas y el nombre, siempre visibles. Tiene su propio fondo
+ * (una franja oscura translúcida), así que se lee igual arriba del hero,
+ * sobre una foto o sobre una banda clara más abajo: no depende de mezclar
+ * colores con lo que hay detrás.
  */
 export function Nav() {
-  const [visible, setVisible] = useState(true)
-
-  useEffect(() => {
-    const medir = () => setVisible(window.scrollY > window.innerHeight * 0.62)
-    medir()
-    window.addEventListener('scroll', medir, { passive: true })
-    window.addEventListener('resize', medir)
-    return () => {
-      window.removeEventListener('scroll', medir)
-      window.removeEventListener('resize', medir)
-    }
-  }, [])
-
   return (
-    <div className="nav" data-visible={visible}>
+    <div className="nav">
       <div className="contenedor nav__fila">
         <a className="nav__marca" href="/">
           {SITE.nombre}
