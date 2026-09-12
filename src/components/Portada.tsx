@@ -1,35 +1,44 @@
 import { SITE } from '@/lib/site'
+import { HeroParallax } from '@/components/HeroParallax'
+
+const CHIPS = ['AI First', 'Agentes', 'Automatización', 'Cliente', 'Producto']
 
 /**
- * El hero es esta composición completa: el nombre, el posicionamiento y
- * los rótulos ya están dentro de la imagen, no son HTML superpuesto. Por
- * eso no hay un bloque de texto acá arriba compitiendo con lo que la
- * imagen ya dice — se duplicaría.
- *
- * El <h1> real sigue existiendo (abajo, oculto visualmente) para que un
- * lector de pantalla o un buscador tengan el nombre como texto, no solo
- * como píxeles dentro de un PNG.
+ * A diferencia de la composición anterior, esta foto no trae texto
+ * incrustado: el nombre, el posicionamiento y los chips son HTML real
+ * superpuesto, así se pueden editar sin volver a generar la imagen.
  */
 export function Portada() {
   return (
     <section className="portada" id="inicio">
       <div className="portada__marco">
-        <img
-          className="portada__medio"
-          src="/fotos/hero-collage.jpg"
-          alt="Composición con Matias Venutolo presentando la transformación AI First del Banco Ciudad, rodeado de fotos de equipos trabajando y un skyline urbano, con el texto Matias Venutolo, IA por Negocio por Tecnología"
-          fetchPriority="high"
-          loading="eager"
-          decoding="async"
-        />
-      </div>
+        <HeroParallax>
+          <img
+            className="portada__medio"
+            src="/fotos/hero-collage.jpg"
+            alt="Matias Venutolo presentando frente a una pantalla azul, con capturas de una reunión de equipo reflejadas alrededor y el skyline de una ciudad de fondo"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+          />
+        </HeroParallax>
+        <div className="portada__velo" aria-hidden="true" />
 
-      <h1 className="sr-only">
-        {SITE.nombre} — {SITE.posicionamiento}
-      </h1>
-      <p className="sr-only">
-        {SITE.cargo} · {SITE.organizacion} · Buenos Aires
-      </p>
+        <div className="portada__copy">
+          <p className="portada__eyebrow">Director · IA y Automatización</p>
+          <h1 className="portada__nombre">{SITE.nombre}</h1>
+          <p className="portada__manifiesto">{SITE.posicionamiento}</p>
+          <p className="portada__rol">
+            Transformación organizacional, productos conversacionales y
+            capacidades de IA aplicadas a negocio real.
+          </p>
+          <ul className="portada__chips">
+            {CHIPS.map((c) => (
+              <li key={c}>{c}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </section>
   )
 }

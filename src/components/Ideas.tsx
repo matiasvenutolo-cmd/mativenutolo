@@ -50,7 +50,7 @@ export function Ideas() {
   return (
     <section className="ideas" id="ideas" aria-label="Ideas">
       <div className="contenedor">
-        <div className="ideas__cabeza">
+        <div className="ideas__cabeza reveal">
           <p className="ideas__rotulo">Cómo pienso</p>
           <h2 className="ideas__t">Seis convicciones que uso para decidir.</h2>
           <p className="ideas__bajada">
@@ -60,7 +60,7 @@ export function Ideas() {
           </p>
         </div>
 
-        <div className="ideas__lista">
+        <div className="ideas__lista reveal">
           {IDEAS.map((idea, i) => (
             <article key={idea.slug} className="idea-c">
               <div className="idea-c__icono">

@@ -54,7 +54,7 @@ export function Trayecto() {
 
   return (
     <section className="trayecto" id="trayectoria">
-      <div className="contenedor trayecto__cabeza">
+      <div className="contenedor trayecto__cabeza reveal">
         <p className="trayecto__anios">
           {anios.map((a, i) => (
             <span key={a} data-activo={i === centro}>

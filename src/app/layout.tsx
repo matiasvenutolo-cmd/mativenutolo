@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, IBM_Plex_Mono } from 'next/font/google'
 import { SITE } from '@/lib/site'
+import { ScrollReveal } from '@/components/ScrollReveal'
 import './globals.css'
 
 const geist = Geist({
@@ -62,6 +63,7 @@ export default function RootLayout({
           Saltar al contenido
         </a>
         {children}
+        <ScrollReveal />
       </body>
     </html>
   )

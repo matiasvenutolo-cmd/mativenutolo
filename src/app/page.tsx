@@ -26,13 +26,11 @@ export default function Home() {
 
         <Capacidades />
 
-        <Trayecto />
-
         <CasoBit />
 
         <section className="casos" aria-label="Otros casos">
           <div className="contenedor">
-            <div className="casos__grilla">
+            <div className="casos__grilla reveal">
               {OTROS_CASOS.map((c) => (
                 <article key={c.slug} className="caso-c">
                   <h2 className="caso-c__t">
@@ -51,7 +49,9 @@ export default function Home() {
 
         <Ideas />
 
-        <section className="cierre" id="contacto">
+        <Trayecto />
+
+        <section className="cierre reveal" id="contacto">
           <div className="contenedor">
             <h2 className="cierre__t">
               El próximo paso es hacer esto a mayor escala.

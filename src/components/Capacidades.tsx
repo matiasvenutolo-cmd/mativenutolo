@@ -21,12 +21,12 @@ export function Capacidades() {
 
   return (
     <section className="capacidades" id="capacidades">
-      <div className="contenedor capacidades__cabeza">
+      <div className="contenedor capacidades__cabeza reveal">
         <p className="rotulo">Qué construyo</p>
         <h2 className="d2">Tres formas de conectar negocio con IA.</h2>
       </div>
 
-      <div className="capacidades__fila" onMouseLeave={() => setActivo(0)}>
+      <div className="capacidades__fila reveal" onMouseLeave={() => setActivo(0)}>
         {CAPACIDADES.map((c, i) => (
           <article
             key={c.clave}

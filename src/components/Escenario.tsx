@@ -16,9 +16,9 @@ export function Escenario() {
   return (
     <section className="escenario" id="charlas">
       <div className="contenedor">
-        <h2 className="d2 escenario__titulo">Charlas y eventos.</h2>
+        <h2 className="d2 escenario__titulo reveal">Charlas y eventos.</h2>
 
-        <div className="escenario__grilla">
+        <div className="escenario__grilla reveal">
           {CON_FOTO.map((a) => (
             <article key={a.titulo} className="escena">
               <img

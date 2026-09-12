@@ -13,7 +13,7 @@ export function CasoBit() {
   return (
     <section className="bit" id="bit">
       <div className="contenedor">
-        <div className="bit__cabeza">
+        <div className="bit__cabeza reveal">
           <h2 className="bit__nombre">bit</h2>
           <p className="bit__que">
             El canal conversacional del Banco Ciudad
@@ -50,7 +50,7 @@ export function CasoBit() {
         </div>
 
         <div
-          className="bit__panel"
+          className="bit__panel reveal"
           id="bit-panel"
           role="tabpanel"
           aria-labelledby={`bit-tab-${fase.clave}`}
