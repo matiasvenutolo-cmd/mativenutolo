@@ -78,24 +78,9 @@ export default function Home() {
 
         <section className="cierre" id="contacto">
           <div className="contenedor">
-            <div className="cierre__grid">
-              <h2 className="cierre__t">
-                El próximo paso es hacer esto a mayor escala.
-              </h2>
-              <div>
-                <p className="cierre__p">
-                  Negocio, tecnología, producto, cliente, dato, inteligencia
-                  artificial: en ese orden porque la tecnología aislada del
-                  negocio y de las personas no cambia nada. Lo aprendí
-                  probándolo, no leyéndolo.
-                </p>
-                <p className="cierre__p">
-                  El mismo criterio sirve en cualquier organización grande:
-                  entender el proceso completo antes de tocar la herramienta,
-                  y no soltarlo hasta que el cliente lo note.
-                </p>
-              </div>
-            </div>
+            <h2 className="cierre__t">
+              El próximo paso es hacer esto a mayor escala.
+            </h2>
 
             <div className="contacto">
               <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer">
