@@ -5,8 +5,8 @@ import { CAPACIDADES } from '@/content/home'
 import { Evidencias } from '@/components/Evidencia'
 
 /**
- * Acordeón horizontal: cuatro paneles con foto de fondo, del mismo ancho
- * en reposo. El que tiene el foco o el mouse encima se expande y muestra
+ * Acordeón horizontal: paneles con foto de fondo, del mismo ancho en
+ * reposo. El que tiene el foco o el mouse encima se expande y muestra
  * la prueba; los demás se comprimen a una franja con el título.
  *
  * El panel es un <article>, no un <a>: adentro hay dos enlaces propios
@@ -14,7 +14,7 @@ import { Evidencias } from '@/components/Evidencia'
  * un enlace no puede anidar otro sin romper el HTML.
  *
  * En pantallas angostas no hay hover, así que la media query de mobile
- * ignora el estado y muestra los cuatro paneles abiertos, apilados.
+ * ignora el estado y muestra los paneles abiertos, apilados.
  */
 export function Capacidades() {
   const [activo, setActivo] = useState(0)
@@ -23,7 +23,7 @@ export function Capacidades() {
     <section className="capacidades" id="capacidades">
       <div className="contenedor capacidades__cabeza">
         <p className="rotulo">Qué construyo</p>
-        <h2 className="d2">Cuatro formas de conectar negocio con IA.</h2>
+        <h2 className="d2">Tres formas de conectar negocio con IA.</h2>
       </div>
 
       <div className="capacidades__fila" onMouseLeave={() => setActivo(0)}>

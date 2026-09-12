@@ -50,16 +50,27 @@ export default function Home() {
 
         <section className="ideas" id="ideas" aria-label="Ideas">
           <div className="contenedor">
+            <div className="ideas__cabeza">
+              <p className="ideas__rotulo">Cómo pienso</p>
+              <span className="ideas__cuenta">{IDEAS.length} convicciones</span>
+            </div>
             <div className="ideas__lista">
-              {IDEAS.map((idea) => (
-                <a
-                  key={idea.slug}
-                  className="idea-b"
-                  href={`/ideas/${idea.slug}`}
-                >
-                  <h2 className="idea-b__t">{idea.titulo}</h2>
-                  <p className="idea-b__b">{idea.bajada}</p>
-                </a>
+              {IDEAS.map((idea, i) => (
+                <article key={idea.slug} className="idea-c">
+                  <div className="idea-c__fila">
+                    <p className="idea-c__eyebrow">Convicción</p>
+                    <span className="idea-c__indice">
+                      {String(i + 1).padStart(2, '0')} / {String(IDEAS.length).padStart(2, '0')}
+                    </span>
+                  </div>
+                  <h2 className="idea-c__t">
+                    <a href={`/ideas/${idea.slug}`}>{idea.titulo}</a>
+                  </h2>
+                  <p className="idea-c__b">{idea.bajada}</p>
+                  <p className="idea-c__pie">
+                    Leer nota <span aria-hidden="true">→</span>
+                  </p>
+                </article>
               ))}
             </div>
           </div>
@@ -74,7 +85,9 @@ export default function Home() {
               <div>
                 <p className="cierre__p">
                   Negocio, tecnología, producto, cliente, dato, inteligencia
-                  artificial. En ese orden y por ese motivo.
+                  artificial: en ese orden porque la tecnología aislada del
+                  negocio y de las personas no cambia nada. Lo aprendí
+                  probándolo, no leyéndolo.
                 </p>
                 <p className="cierre__p">
                   El mismo criterio sirve en cualquier organización grande:
@@ -88,9 +101,6 @@ export default function Home() {
               <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer">
                 LinkedIn <span aria-hidden="true">↗</span>
               </a>
-              {SITE.email ? (
-                <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-              ) : null}
             </div>
           </div>
         </section>

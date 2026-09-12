@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { BIT_FASES } from '@/content/home'
 import { Evidencias } from '@/components/Evidencia'
+import { WhatsAppMock } from '@/components/WhatsAppMock'
 
 /** bit recorrido por fases: canal, producto, plataforma, IA. */
 export function CasoBit() {
@@ -15,7 +16,9 @@ export function CasoBit() {
         <div className="bit__cabeza">
           <h2 className="bit__nombre">bit</h2>
           <p className="bit__que">
-            El canal conversacional del Banco Ciudad · Product Owner desde 2022
+            El canal conversacional del Banco Ciudad
+            <br />
+            Product Owner desde 2022
           </p>
         </div>
 
@@ -52,22 +55,24 @@ export function CasoBit() {
           role="tabpanel"
           aria-labelledby={`bit-tab-${fase.clave}`}
         >
-          <div>
+          <div className="bit__col">
             <h3 className="bit__titulo">{fase.titulo}</h3>
             <p className="bit__linea">{fase.linea}</p>
             <Evidencias ids={fase.fuentes} />
+
+            {fase.cifras ? (
+              <div className="bit__cifras">
+                {fase.cifras.map((c) => (
+                  <div key={c.rotulo} className="bit__cifra">
+                    <b>{c.valor}</b>
+                    <span>{c.rotulo}</span>
+                  </div>
+                ))}
+              </div>
+            ) : null}
           </div>
 
-          {fase.cifras ? (
-            <div className="bit__cifras">
-              {fase.cifras.map((c) => (
-                <div key={c.rotulo} className="bit__cifra">
-                  <b>{c.valor}</b>
-                  <span>{c.rotulo}</span>
-                </div>
-              ))}
-            </div>
-          ) : null}
+          <WhatsAppMock />
         </div>
       </div>
     </section>

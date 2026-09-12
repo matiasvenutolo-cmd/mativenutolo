@@ -7,7 +7,7 @@ export const SITE = {
   posicionamiento: 'Negocio × Tecnología × IA',
   descripcion:
     'Matias Venutolo dirige inteligencia artificial y automatización en Banco Ciudad. Trabaja en el punto donde una necesidad del cliente se vuelve proceso y un proceso se vuelve una forma distinta de operar.',
-  email: 'matias.venutolo@gmail.com',
+  email: '',
   linkedin: 'https://www.linkedin.com/in/matiasvenutolo/',
   locale: 'es_AR',
 } as const

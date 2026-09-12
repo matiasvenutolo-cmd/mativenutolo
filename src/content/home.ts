@@ -21,7 +21,7 @@ export const CAPACIDADES: Capacidad[] = [
     prueba:
       'CRAC, el asistente interno, lo usan más de ocho de cada diez empleados del banco. Ese resultado fue lo que llevó a institucionalizar el enfoque.',
     fuentes: ['iproup', 'cronista'],
-    href: '/casos/crac',
+    href: '/casos/ai-first',
     foto: {
       src: '/fotos/academia-ia.jpg',
       alt: 'Matias Venutolo dando una clase de la Academia de IA del Banco Ciudad',
@@ -53,20 +53,6 @@ export const CAPACIDADES: Capacidad[] = [
     foto: {
       src: '/fotos/microsoft-argentina.jpg',
       alt: 'Matias Venutolo presentando la transformación AI First del Banco Ciudad en las oficinas de Microsoft',
-    },
-  },
-  {
-    clave: 'roi',
-    titulo: 'IA → resultado',
-    resumen:
-      'Traducir la tecnología al idioma de la conducción: qué problema resuelve, cuánto cuesta, cuánto devuelve y cómo escala. La conversación tiene que poder llegar al directorio.',
-    prueba:
-      '2.400 horas anuales redirigidas a tareas de más valor y un retorno declarado de siete veces el costo.',
-    fuentes: ['microsoftEs', 'microsoftEn'],
-    href: '/casos/centro-de-excelencia',
-    foto: {
-      src: '/fotos/adrha-escenario.jpg',
-      alt: 'Matias Venutolo en el escenario de ADRHA junto a otro orador',
     },
   },
 ]
