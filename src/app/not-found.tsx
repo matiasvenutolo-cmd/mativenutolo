@@ -1,10 +1,10 @@
-import { Encabezado } from '@/components/Encabezado'
+import { Nav } from '@/components/Nav'
 import { PieInterior } from '@/components/PieInterior'
 
 export default function NoEncontrado() {
   return (
     <>
-      <Encabezado />
+      <Nav />
       <main id="inicio" className="interior">
         <div className="contenedor">
           <header className="interior__cabecera">

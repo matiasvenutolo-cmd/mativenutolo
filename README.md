@@ -1,9 +1,9 @@
 # matiasvenutolo.com
 
-Sitio personal de Matías Venutolo. Sistema **Archivo Vivo**, piel **Executive / Technology**:
-bandas oscuras y claras que alternan, una sans técnica y un solo verde de señal. La
-trayectoria es una línea continua que atraviesa el sitio, toma color a medida que avanza
-y vive como riel fijo en el borde izquierdo mientras se lee.
+Sitio personal de Matías Venutolo. Azules profundos, celeste eléctrico y blanco,
+fotografía real en color y una composición distinta por sección: portada a pantalla
+completa, trayectoria horizontal, cadena de capacidades, BIT por fases y un escenario
+fijo para las charlas.
 
 Next.js 16 (App Router, estático), TypeScript, CSS propio. Sin CMS, sin framework de
 utilidades, sin librerías de animación.
@@ -24,8 +24,11 @@ src/
     fuentes/              El registro completo de evidencia
     globals.css           Todo el sistema visual: bandas, tipografía y la línea
   components/
-    Encabezado.tsx        Navegación + la línea contraída como progreso
-    Linea.tsx             La trayectoria
+    Nav.tsx               Cuatro entradas, mezcladas por diferencia
+    Portada.tsx           Fotografía a pantalla completa que rota
+    Trayecto.tsx          Recorrido horizontal de 2013 a hoy
+    CasoBit.tsx           BIT por fases: bot, canal, producto, plataforma, IA
+    Escenario.tsx         Charlas: imagen fija que cambia con el scroll
     Evidencia.tsx         La marca de evidencia
   content/
     fuentes.ts            Registro de fuentes. Nada se afirma sin pasar por acá

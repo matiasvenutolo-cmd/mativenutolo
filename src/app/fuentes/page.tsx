@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { listaFuentes, type EstadoFuente } from '@/content/fuentes'
-import { Encabezado } from '@/components/Encabezado'
+import { Nav } from '@/components/Nav'
 import { PieInterior } from '@/components/PieInterior'
 import { SITE } from '@/lib/site'
 
@@ -21,7 +21,7 @@ const ETIQUETA_ESTADO: Record<EstadoFuente, string> = {
 export default function FuentesPage() {
   return (
     <>
-      <Encabezado />
+      <Nav />
       <main id="inicio" className="interior">
         <div className="contenedor">
           <header className="interior__cabecera">

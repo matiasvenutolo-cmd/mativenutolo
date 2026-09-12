@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { CASOS, getCaso } from '@/content/casos'
 import { FUENTES } from '@/content/fuentes'
 import { Evidencia, Evidencias } from '@/components/Evidencia'
-import { Encabezado } from '@/components/Encabezado'
+import { Nav } from '@/components/Nav'
 import { PieInterior } from '@/components/PieInterior'
 import { SITE } from '@/lib/site'
 
@@ -43,7 +43,7 @@ export default async function CasoPage({
 
   return (
     <>
-      <Encabezado />
+      <Nav />
       <main id="inicio" className="interior">
         <article className="contenedor">
           <header className="interior__cabecera">

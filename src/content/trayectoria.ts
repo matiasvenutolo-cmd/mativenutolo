@@ -7,6 +7,8 @@ export type Etapa = {
   etiqueta: string
   /** Titular de la etapa cuando se expande */
   titulo: string
+  /** Una línea. Lo que se lee sin entrar a ningún lado. */
+  sintesis: string
   /** Dos o tres frases. Nada más: el detalle largo vive en /trayectoria */
   texto: string
   /** Posición 0–1 sobre la rampa cromática */
@@ -17,6 +19,7 @@ export type Etapa = {
 export const ETAPAS: Etapa[] = [
   {
     anio: '2013',
+    sintesis: 'Administración y sistemas, en el ITBA.',
     etiqueta: 'Negocio + Tecnología',
     titulo: 'Elegí el puente antes de que fuera un puesto',
     texto:
@@ -25,6 +28,7 @@ export const ETAPAS: Etapa[] = [
   },
   {
     anio: '2014',
+    sintesis: 'Entra al banco por testing. Cuatro años adentro de los sistemas.',
     etiqueta: 'Sistemas bancarios',
     titulo: 'Cuatro años mirando un banco por dentro',
     texto:
@@ -33,6 +37,7 @@ export const ETAPAS: Etapa[] = [
   },
   {
     anio: '2019',
+    sintesis: 'Canales digitales. Incidentes, causa raíz y una migración de core.',
     etiqueta: 'Canales digitales',
     titulo: 'De apagar incendios a preguntar por qué se prenden',
     texto:
@@ -41,6 +46,7 @@ export const ETAPAS: Etapa[] = [
   },
   {
     anio: '2021',
+    sintesis: 'Conduce un equipo de desarrollo con especialistas de décadas.',
     etiqueta: 'Liderazgo de equipos',
     titulo: 'Liderar gente que sabe más que uno',
     texto:
@@ -49,6 +55,7 @@ export const ETAPAS: Etapa[] = [
   },
   {
     anio: '2022',
+    sintesis: 'Product Owner de BIT.',
     etiqueta: 'Producto y cliente',
     titulo: 'Product Owner de BIT',
     texto:
@@ -58,6 +65,7 @@ export const ETAPAS: Etapa[] = [
   },
   {
     anio: '2023',
+    sintesis: 'BIT llega a WhatsApp. Dos reconocimientos PAMOIC.',
     etiqueta: 'Dato e IA',
     titulo: 'El canal se vuelve una plataforma',
     texto:
@@ -67,6 +75,7 @@ export const ETAPAS: Etapa[] = [
   },
   {
     anio: '2025',
+    sintesis: 'Centro de Excelencia en IA. Agentes en producción y una conversación de retorno.',
     etiqueta: 'Transformación organizacional',
     titulo: 'De un producto a una capacidad de toda la empresa',
     texto:

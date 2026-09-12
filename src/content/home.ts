@@ -101,6 +101,75 @@ export const BIT_HITOS: HitoBit[] = [
   },
 ]
 
+
+/* ---------- BIT, recorrido por fases ---------- */
+
+export type FaseBit = {
+  clave: string
+  fase: string
+  anio: string
+  titulo: string
+  linea: string
+  cifras?: { valor: string; rotulo: string }[]
+  fuentes: FuenteId[]
+  foto?: string
+}
+
+export const BIT_FASES: FaseBit[] = [
+  {
+    clave: 'bot',
+    fase: 'Bot',
+    anio: '2017',
+    titulo: 'Responde preguntas frecuentes',
+    linea:
+      'Servicios cognitivos y una base de conocimiento sobre el sitio del banco. Contesta consultas de préstamos, cuentas y trámites.',
+    fuentes: ['itsitio'],
+  },
+  {
+    clave: 'canal',
+    fase: 'Canal',
+    anio: '2022',
+    titulo: 'Toma dueño y hoja de ruta',
+    linea:
+      'La pregunta deja de ser cuántas consultas contesta y pasa a ser qué trámite resuelve entero sin que el cliente llame.',
+    fuentes: ['chattigo'],
+  },
+  {
+    clave: 'producto',
+    fase: 'Producto',
+    anio: '2023',
+    titulo: 'Se muda a WhatsApp',
+    linea:
+      'Va adonde ya está el cliente. El caso recibe dos reconocimientos PAMOIC: Plata en Sector Ciudadano y Bronce en Customer Experience.',
+    cifras: [{ valor: '2', rotulo: 'reconocimientos PAMOIC' }],
+    fuentes: ['iprofesional', 'pamoic'],
+  },
+  {
+    clave: 'plataforma',
+    fase: 'Plataforma',
+    anio: '2025',
+    titulo: 'Más de sesenta trámites',
+    linea:
+      'Turnos, activación de tarjetas, seguimiento de entregas, saldos, movimientos, reclamos.',
+    cifras: [
+      { valor: '+51 %', rotulo: 'interacciones' },
+      { valor: '−15 pts', rotulo: 'derivación a un humano' },
+      { valor: '+18 pts', rotulo: 'satisfacción' },
+      { valor: '60+', rotulo: 'trámites' },
+    ],
+    fuentes: ['meta'],
+  },
+  {
+    clave: 'ia',
+    fase: 'IA',
+    anio: '2026',
+    titulo: 'El dato vuelve como agentes',
+    linea:
+      'Cada conversación dice qué necesita un cliente y dónde se traba un proceso. Ese dato alimenta la automatización dentro y fuera del canal.',
+    fuentes: ['podcast'],
+  },
+]
+
 /* ---------- Otros casos ---------- */
 
 export type CasoBreve = {
@@ -328,6 +397,12 @@ export const APARICIONES: Aparicion[] = [
       'El socio tecnológico del canal publica el caso completo, con el recorrido de BIT contado desde la implementación.',
     fuentes: ['chattigo2024'],
     video: 'https://www.youtube.com/watch?v=6vxeeb9SiYQ',
+    foto: {
+      src: '/fotos/yt-6vxeeb9SiYQ.jpg',
+      alt: 'Portada del caso de éxito de Banco Ciudad publicado por Chattigo',
+      ancho: 1280,
+      alto: 720,
+    },
   },
   {
     fecha: 'Agosto 2024',
@@ -338,6 +413,12 @@ export const APARICIONES: Aparicion[] = [
       'El caso presentado ante una audiencia profesional externa, cuando el canal ya había dejado de ser un bot de preguntas frecuentes.',
     fuentes: ['cfp2024'],
     video: 'https://www.youtube.com/watch?v=r7YVbo4ZjZQ',
+    foto: {
+      src: '/fotos/yt-r7YVbo4ZjZQ.jpg',
+      alt: 'Portada de la presentación del caso BIT en CFP Connections',
+      ancho: 1280,
+      alto: 720,
+    },
   },
   {
     fecha: 'Octubre 2023',
@@ -348,5 +429,11 @@ export const APARICIONES: Aparicion[] = [
       'La primera aparición pública del caso, un año después de tomar el producto. El título ya decía lo que iba a pasar después: el chatbot como excusa para cambiar la organización.',
     fuentes: ['chattigo2023'],
     video: 'https://www.youtube.com/watch?v=XdqDZ8s6EYI',
+    foto: {
+      src: '/fotos/yt-XdqDZ8s6EYI.jpg',
+      alt: 'Portada de la charla sobre BIT transformando una organización',
+      ancho: 1280,
+      alto: 720,
+    },
   },
 ]

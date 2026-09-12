@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { IDEAS } from '@/content/home'
-import { Encabezado } from '@/components/Encabezado'
+import { Nav } from '@/components/Nav'
 import { PieInterior } from '@/components/PieInterior'
 import { SITE } from '@/lib/site'
 
@@ -42,7 +42,7 @@ export default async function IdeaPage({
 
   return (
     <>
-      <Encabezado />
+      <Nav />
       <main id="inicio" className="interior">
         <article className="contenedor idea">
           <p className="rotulo">Cómo pienso</p>
