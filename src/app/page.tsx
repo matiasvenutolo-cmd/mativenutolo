@@ -19,9 +19,13 @@ export default function Home() {
       <main>
         <Portada />
 
-        <Trayecto />
+        <Escenario />
+
+        <Carrusel />
 
         <Capacidades />
+
+        <Trayecto />
 
         <CasoBit />
 
@@ -43,10 +47,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <Escenario />
-
-        <Carrusel />
 
         <section className="ideas" id="ideas" aria-label="Ideas">
           <div className="contenedor">

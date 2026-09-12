@@ -28,7 +28,7 @@ export const ETAPAS: Etapa[] = [
   },
   {
     anio: '2014',
-    sintesis: 'Entra al banco por testing. Cuatro años adentro de los sistemas.',
+    sintesis: 'Entro al banco por testing. Cuatro años adentro de los sistemas.',
     etiqueta: 'Sistemas bancarios',
     titulo: 'Cuatro años mirando un banco por dentro',
     texto:
@@ -46,7 +46,7 @@ export const ETAPAS: Etapa[] = [
   },
   {
     anio: '2021',
-    sintesis: 'Conduce un equipo de desarrollo con especialistas de décadas.',
+    sintesis: 'Conduzco un equipo de desarrollo con especialistas de décadas.',
     etiqueta: 'Liderazgo de equipos',
     titulo: 'Liderar gente que sabe más que uno',
     texto:

@@ -1,9 +1,10 @@
 import { SITE } from '@/lib/site'
 
 const ENLACES = [
+  { href: '/#charlas', etiqueta: 'Charlas' },
+  { href: '/#capacidades', etiqueta: 'Qué construyo' },
   { href: '/#trayectoria', etiqueta: 'Trayectoria' },
   { href: '/#bit', etiqueta: 'Casos' },
-  { href: '/#charlas', etiqueta: 'Charlas' },
   { href: '/#contacto', etiqueta: 'Contacto' },
 ]
 
