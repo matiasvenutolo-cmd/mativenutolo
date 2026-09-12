@@ -6,17 +6,24 @@ type Mensaje = { de: 'cliente' | 'bit'; texto: string; hora: string }
 
 /** Ejemplo ilustrativo, no una captura real de una conversación. Se arma
  *  con capacidades ya citadas con fuente en la sección de bit (activación
- *  de tarjetas, turnos, saldo). */
+ *  de tarjetas, turnos y consulta de saldo). */
 const MENSAJES: Mensaje[] = [
-  { de: 'cliente', texto: 'Necesito activar mi tarjeta nueva', hora: '10:41' },
-  { de: 'bit', texto: 'Dale, pasame los últimos 4 números', hora: '10:41' },
-  { de: 'cliente', texto: '8842', hora: '10:42' },
-  { de: 'bit', texto: 'Lista ✓ Ya la podés usar', hora: '10:42' },
+  { de: 'cliente', texto: 'Hola! necesito activar mi tarjeta nueva', hora: '10:41' },
+  { de: 'bit', texto: 'Hola 👋 dale, pasame los últimos 4 números de la tarjeta', hora: '10:41' },
+  { de: 'cliente', texto: '8842', hora: '10:41' },
+  { de: 'bit', texto: 'Perfecto, ya quedó activada ✅ ya la podés usar', hora: '10:42' },
+  { de: 'cliente', texto: 'genial, gracias. otra consulta', hora: '10:43' },
+  { de: 'bit', texto: 'Decime', hora: '10:43' },
+  { de: 'cliente', texto: 'puedo sacar un turno para ir a la sucursal?', hora: '10:44' },
+  { de: 'bit', texto: 'Sí. Tengo disponible mañana 10hs o 15hs, ¿cuál te queda mejor?', hora: '10:44' },
+  { de: 'cliente', texto: 'el de las 10', hora: '10:45' },
+  { de: 'bit', texto: 'Quedó reservado para mañana 10hs. Te aviso un rato antes 🗓️', hora: '10:45' },
 ]
 
-const ESCRIBIENDO_MS = 1100
-const PAUSA_MS = 1500
-const PAUSA_FINAL_MS = 2400
+const VENTANA = 4
+const ESCRIBIENDO_MS = 1000
+const PAUSA_MS = 1300
+const PAUSA_FINAL_MS = 2600
 const PAUSA_INICIAL_MS = 500
 
 /**
@@ -135,8 +142,12 @@ export function WhatsAppMock() {
           </div>
 
           <div className="whatsapp-mock__chat">
-            {MENSAJES.slice(0, visibles).map((m, i) => (
-              <p key={i} className="whatsapp-mock__burbuja" data-de={m.de}>
+            {MENSAJES.slice(Math.max(0, visibles - VENTANA), visibles).map((m, i) => (
+              <p
+                key={Math.max(0, visibles - VENTANA) + i}
+                className="whatsapp-mock__burbuja"
+                data-de={m.de}
+              >
                 {m.texto}
                 <span className="whatsapp-mock__meta">
                   {m.hora}

@@ -5,9 +5,10 @@ import { Capacidades } from '@/components/Capacidades'
 import { CasoBit } from '@/components/CasoBit'
 import { Escenario } from '@/components/Escenario'
 import { Carrusel } from '@/components/Carrusel'
+import { Ideas } from '@/components/Ideas'
 import { Evidencias } from '@/components/Evidencia'
 import { ETAPAS } from '@/content/trayectoria'
-import { IDEAS, OTROS_CASOS } from '@/content/home'
+import { OTROS_CASOS } from '@/content/home'
 import { FUENTES } from '@/content/fuentes'
 import { SITE } from '@/lib/site'
 
@@ -48,33 +49,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="ideas" id="ideas" aria-label="Ideas">
-          <div className="contenedor">
-            <div className="ideas__cabeza">
-              <p className="ideas__rotulo">Cómo pienso</p>
-              <span className="ideas__cuenta">{IDEAS.length} convicciones</span>
-            </div>
-            <div className="ideas__lista">
-              {IDEAS.map((idea, i) => (
-                <article key={idea.slug} className="idea-c">
-                  <div className="idea-c__fila">
-                    <p className="idea-c__eyebrow">Convicción</p>
-                    <span className="idea-c__indice">
-                      {String(i + 1).padStart(2, '0')} / {String(IDEAS.length).padStart(2, '0')}
-                    </span>
-                  </div>
-                  <h2 className="idea-c__t">
-                    <a href={`/ideas/${idea.slug}`}>{idea.titulo}</a>
-                  </h2>
-                  <p className="idea-c__b">{idea.bajada}</p>
-                  <p className="idea-c__pie">
-                    Leer nota <span aria-hidden="true">→</span>
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <Ideas />
 
         <section className="cierre" id="contacto">
           <div className="contenedor">
