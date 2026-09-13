@@ -1,6 +1,6 @@
 export const SITE = {
   nombre: 'Matias Venutolo',
-  url: 'https://mativenutolo.vercel.app',
+  url: 'https://www.matiasvenutolo.com.ar',
   cargo: 'Director de Inteligencia Artificial y Automatización',
   cargoEn: 'Director of Artificial Intelligence and Automation',
   organizacion: 'Banco Ciudad',
