@@ -107,7 +107,7 @@ function datosEstructurados(lang: Lang) {
     '@id': `${base}/#profilepage`,
     url: base,
     inLanguage: lang === 'es' ? 'es-AR' : 'en',
-    dateModified: '2026-09-12',
+    dateModified: new Date().toISOString(),
     mainEntity: {
       '@type': 'Person',
       '@id': `${SITE.url}/#persona`,
