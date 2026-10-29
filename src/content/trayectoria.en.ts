@@ -64,7 +64,17 @@ export const ETAPAS_EN: Etapa[] = [
     titulo: 'From a product to a company-wide capability',
     texto:
       "The work stopped being a channel and became an installed capability: a center of excellence, a roadmap, agents in production, and a return that can be explained in a board meeting. Today I lead artificial intelligence and automation.",
-    paso: 1,
+    paso: 0.92,
     fuentes: ['microsoftEs', 'podcast'],
+  },
+  {
+    anio: '2026',
+    sintesis: 'Director of AI and Automation. Fintech Americas Platinum Country Award for BIT First.',
+    etiqueta: 'Regional recognition',
+    titulo: 'The case goes beyond Argentina',
+    texto:
+      "I lead artificial intelligence and automation at the bank. In the 2027 edition of the Financial Innovators of the Americas Awards, Fintech Americas named me the Country Award winner for Argentina, at the Platinum level in Customer Experience, for the BIT First concept. The same year, the BIT team received two more PAMOIC awards.",
+    paso: 1,
+    fuentes: ['fintechAmericas', 'fintechAmericasPost', 'pamoic2026'],
   },
 ]

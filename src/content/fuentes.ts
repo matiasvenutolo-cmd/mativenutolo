@@ -354,6 +354,54 @@ export const FUENTES = {
       'Talk about bit published by the technology partner, a year after he took over the product.',
     loNombra: true,
   },
+  fintechAmericas: {
+    id: 'fintechAmericas',
+    etiqueta: 'Fintech Americas',
+    organizacion: 'Fintech Americas',
+    titulo: 'Premios a los Innovadores Financieros en las Américas 2027 · Ganadores',
+    url: 'https://www.fintechamericas.co/premios-innovadores-financieros/ganadores-2027',
+    fecha: 'octubre 2026',
+    fechaEn: 'October 2026',
+    iso: '2026-10',
+    estado: 'verificado',
+    prueba:
+      'Lo lista como ganador del Premio País por Argentina en la 12ª edición, como Head of AI de Banco Ciudad.',
+    pruebaEn:
+      'Lists him as the Country Award winner for Argentina in the 12th edition, as Head of AI at Banco Ciudad.',
+    loNombra: true,
+  },
+  fintechAmericasPost: {
+    id: 'fintechAmericasPost',
+    etiqueta: 'LinkedIn',
+    organizacion: 'LinkedIn',
+    titulo: 'Reconocimiento Platino en los Premios a los Innovadores Financieros en las Américas 2027',
+    url: 'https://www.linkedin.com/posts/matiasvenutolo_recibimos-el-reconocimiento-platino-en-los-activity-7521564082827587584-elXF',
+    fecha: 'octubre 2026',
+    fechaEn: 'October 2026',
+    iso: '2026-10',
+    estado: 'autodeclarado',
+    prueba:
+      'Nivel Platino, categoría Experiencia del Cliente, por el concepto BIT First.',
+    pruebaEn:
+      'Platinum level, Customer Experience category, for the BIT First concept.',
+    loNombra: true,
+  },
+  pamoic2026: {
+    id: 'pamoic2026',
+    etiqueta: 'Banco Ciudad',
+    organizacion: 'Banco Ciudad · LinkedIn',
+    titulo: 'Premios PAMOIC 2026 para la célula BIT',
+    url: 'https://www.linkedin.com/posts/banco-ciudad_transformaci%C3%B3ndigital-experienciadecliente-activity-7519106589627408384-3pom',
+    fecha: 'octubre 2026',
+    fechaEn: 'October 2026',
+    iso: '2026-10',
+    estado: 'institucional',
+    prueba:
+      'Plata por "Tu casa por WhatsApp" y Bronce por "De chatbot a columna vertebral de la experiencia", ambos a la célula BIT del banco.',
+    pruebaEn:
+      'Silver for "Tu casa por WhatsApp" and Bronze for "De chatbot a columna vertebral de la experiencia", both awarded to the bank\'s BIT team.',
+    loNombra: false,
+  },
   linkedin: {
     id: 'linkedin',
     etiqueta: 'LinkedIn',

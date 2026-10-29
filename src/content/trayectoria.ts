@@ -80,7 +80,17 @@ export const ETAPAS: Etapa[] = [
     titulo: 'De un producto a una capacidad de toda la empresa',
     texto:
       'El trabajo dejó de ser un canal y pasó a ser una capacidad instalada: un centro de excelencia, una hoja de ruta, agentes en producción y un retorno que se puede explicar en una reunión de directorio. Hoy dirijo inteligencia artificial y automatización.',
-    paso: 1,
+    paso: 0.92,
     fuentes: ['microsoftEs', 'podcast'],
+  },
+  {
+    anio: '2026',
+    sintesis: 'Director de IA y Automatización. Premio País Platino de Fintech Americas por BIT First.',
+    etiqueta: 'Reconocimiento regional',
+    titulo: 'El caso sale de la Argentina',
+    texto:
+      'Dirijo inteligencia artificial y automatización en el banco. En la edición 2027 de los Premios a los Innovadores Financieros en las Américas, Fintech Americas me eligió como ganador del Premio País por Argentina, con nivel Platino en Experiencia del Cliente por el concepto BIT First. El mismo año, la célula BIT recibió dos PAMOIC más.',
+    paso: 1,
+    fuentes: ['fintechAmericas', 'fintechAmericasPost', 'pamoic2026'],
   },
 ]

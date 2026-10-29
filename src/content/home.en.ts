@@ -90,8 +90,12 @@ export const BIT_FASES_EN: FaseBit[] = [
     anio: '2026',
     titulo: 'The data comes back as agents',
     linea:
-      "Every conversation says what a customer needs and where a process breaks down. That data feeds automation inside and outside the channel.",
-    fuentes: ['podcast'],
+      "Every conversation says what a customer needs and where a process breaks down. That data feeds automation inside and outside the channel. The BIT First concept received Fintech Americas' Platinum Country Award, and the channel added two more PAMOIC awards.",
+    cifras: [
+      { valor: 'Platinum', rotulo: 'Fintech Americas 2027' },
+      { valor: '2', rotulo: 'PAMOIC 2026 awards' },
+    ],
+    fuentes: ['podcast', 'fintechAmericas', 'fintechAmericasPost', 'pamoic2026'],
   },
 ]
 

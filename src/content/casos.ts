@@ -27,7 +27,7 @@ export const CASOS: Caso[] = [
       'Un canal que nació con dueño en 2022 y hoy resuelve más de sesenta trámites, generando el dato con el que se rediseñan los procesos.',
     periodo: '2022 → hoy',
     rol: 'Product Owner desde el origen del producto',
-    fuentes: ['iprofesional', 'pamoic', 'meta', 'chattigo'],
+    fuentes: ['iprofesional', 'pamoic', 'meta', 'chattigo', 'fintechAmericas', 'fintechAmericasPost', 'pamoic2026'],
     bloques: [
       {
         tipo: 'parrafo',
@@ -92,6 +92,29 @@ export const CASOS: Caso[] = [
         tipo: 'parrafo',
         texto:
           'Ahí es donde este caso deja de ser un caso de producto. Un canal que además genera el insumo para rediseñar procesos es otra cosa: es una capacidad.',
+      },
+      { tipo: 'subtitulo', texto: 'BIT First, reconocido afuera' },
+      {
+        tipo: 'parrafo',
+        texto:
+          'BIT First es la idea de que la conversación sea la forma principal en que el cliente se relaciona con el banco. En la edición 2027 de los Premios a los Innovadores Financieros en las Américas, Fintech Americas me eligió como ganador del Premio País por Argentina, con nivel Platino en la categoría Experiencia del Cliente, por ese concepto.',
+      },
+      {
+        tipo: 'dato',
+        valor: 'Platino',
+        rotulo: 'Premio País Argentina · Fintech Americas 2027',
+        fuente: 'fintechAmericasPost',
+      },
+      {
+        tipo: 'dato',
+        valor: '2',
+        rotulo: 'Reconocimientos PAMOIC 2026 para la célula BIT',
+        fuente: 'pamoic2026',
+      },
+      {
+        tipo: 'nota',
+        texto:
+          'Los dos PAMOIC 2026 fueron para la célula BIT del banco: Plata por "Tu casa por WhatsApp" y Bronce por "De chatbot a columna vertebral de la experiencia". Igual que los de 2023, son premios al equipo y a la institución, no a una persona.',
       },
     ],
   },
